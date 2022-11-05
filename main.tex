@@ -38,6 +38,7 @@
 % Set the language
 \usepackage[italian]{babel} % Load characters and hyphenation
 \usepackage[english=british]{csquotes} % English quotes
+
 % Load packages for testing
 \usepackage{blindtext}
 %\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
@@ -51,7 +52,7 @@
 \usepackage{styles/mdftheorems}
 %\usepackage{styles/plaintheorems}
 \usepackage{physics}
-\usepackage{tikz,mathtools}
+\usepackage{tikz, mathtools}
 \usepackage{boxedminipage}
 \usepackage{svg}
 \usepackage{wrapfig}
@@ -61,13 +62,23 @@
 \usepackage{calrsfs}
 \usepackage{nccmath}
 \usepackage{witharrows}
-%\usepackage{enumerate}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 \usepackage{enumitem}
 \usepackage{tikz-cd} % For the curved arrows under the equations
-\usepackage{subfiles} % Best loaded last in the preamble
-
-\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
-\newcommand{\eps}{\varepsilon}
+\newcommand\bigLambda{\makebox(3,3){\text{\huge $\Lambda_{\mu\nu}$}}}
+\newcommand\bigR{\makebox(3,3){\text{\huge $R$}}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+\usepackage{nicematrix} %Fa le matrici ciotte
+\usepackage{tikz}
+\usepackage{blkarray}
+\usepackage{multirow}
+\usepackage{arydshln}
+%\usepackage[fleqn,tbtags]{mathtools}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \tikzstyle{H} = [solid,<->,yshift=-2mm]
+% \tikzstyle{V} = [solid,<->,xshift=8mm]
+%\newcommand{\eps}{\varepsilon}
 \newcommand*{\img}[1]{%
     \raisebox{-1.9\baselineskip}{%
         \includegraphics[
@@ -77,7 +88,6 @@
         ]{#1}%
     }%
 }
-\newcommand{\de}[1]{\textrm{d}#1}
 \newcommand*\mycirc[1]{%
    \begin{tikzpicture}
      \node[draw,circle,inner sep=1pt] {#1};
@@ -85,6 +95,15 @@
 \graphicspath{{examples/documentation/images/}{images/}} % Paths in which to look for images
 \usepackage{cancel}
 \usepackage{nicefrac}
+\usepackage{graphicx,calc}
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\usepackage{subfiles} % Best loaded last in the preamble
+\usepackage{soul}
+\usepackage{xcolor}
 \definecolor{red}{RGB}{255, 0, 0}
 \renewcommand{\CancelColor}{\color{red}}
 \makeindex[columns=3, title=Indice analitico, intoc] % Make LaTeX produce the files required to compile the index
@@ -108,9 +127,9 @@
 \subject{Appunti del corso di}
 
 \title[Teoria dei gruppi nella fisica matematica]{Teoria dei gruppi nella fisica matematica}
-\subtitle{\textit{Group theory in mathematical physics}\\Anno accademico 2021/2022\\ tenuto dal Prof. Gianluca Panati}
+\subtitle{\textit{Group theory in mathematical physics}\\Anno accademico 2021/2022/2023\\ tenuto dal Prof. Gianluca Panati}
 
-\author[Francesco Amicucci]{Francesco Amicucci \thanks{Un amante di \LaTeX}\\Matteo D'Errigo}
+\author[Francesco Amicucci]{Francesco Amicucci \thanks{Un amante di \LaTeX}\\Matteo D'Errigo\thanks{Un amante dei panini}}
 
 \date{\today}
 
@@ -147,8 +166,8 @@
     \textbf{Versione aggiornata}\\
 	Puoi trovare la versione aggiornata di questo testo, insieme al suo codice \LaTeX  all'indirizzo:\\
 	\url{https://www.overleaf.com/read/hhbfwtrfbrdf}\\
-	E una versione italiana del testo qua:\\
-	\url{https://www.overleaf.com/read/ntmsgsnnjjqs}\\
+	%E una versione italiana del testo qua:\\
+	%\url{https://www.overleaf.com/read/ntmsgsnnjjqs}\\
 	
 	\medskip
 	
@@ -172,8 +191,8 @@
 
 	
 	    
-	%\textbf{Publisher} \\
-	%First printed in May 2019 by \@publishers
+	\textbf{Publisher} \\
+	First wrote in March 2022 by us
 }
 \makeatother
 
@@ -250,6 +269,33 @@
 \subfile{chapters/3_tangent_cot_space}
 \subfile{chapters/4_differential_forms_I}
 \subfile{chapters/5_differential_forms_II}
+\subfile{chapters/6_Electrodynamics and differential forms}
+\part{Groups}
+\dedication{
+	The beginner should not be discouraged if he finds that he does not have the prerequisites to read the prerequisites.\\
+	\begin{flushright} -- \href{https://it.wikipedia.org/wiki/Paul_Halmos}{P. Halmos} in \cite{Halmos1950}
+	\end{flushright}
+	\newline
+	\small{\newline Il principiante non deve scoraggiarsi se scopre di non avere i prerequisiti per leggere i prerequisiti.}\\
+	\begin{flushright} -- P. Halmos
+	\end{flushright}    
+}
+\subfile{chapters/7_Fundamental concepts}
+\subfile{chapters/8_Lie_Groups_I}
+\subfile{chapters/9_Lie_Groups_II}
+\subfile{chapters/10_Lie_Groups_III}
+\subfile{chapters/11_Two_Brothers}
+\subfile{chapters/12_Matrix_Exponential_and_Logarithm}
+\subfile{chapters/13_Tool:Polar_decomposition}
+\subfile{chapters/14_Lie_Algebra_of_a_Matrix_Lie_Group}
+\subfile{chapters/15_The exponential map_of_G}
+\subfile{chapters/16_Group_Theory_and_Quantum_Mechanics}
+\subfile{chapters/17_Representation_Theory}
+\subfile{chapters/18_Representations_of_sl2c}
+\subfile{chapters/19_Representations_of_sl3c}
+\subfile{chapters/20_Lorentz_and_Poincare_groups}
+\part{Exercises}
+\subfile{chapters/21_Starred_Exercises}
 
 %\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
 
@@ -281,6 +327,14 @@
 
 \nomenclature{$c$}{Velocità della luce nel vuoto in un sistema di riferimento inerziale}
 \nomenclature{$h$}{Costante di Planck}
+\nomenclature{$H$}{Hamiltoniana o funzione di Hamilton}
+\nomenclature{$\mathbb{H}$}{Insieme dei quaterioni}
+\nomenclature{$\mathcal{H}$}{Spazio di Hilbert - \textit{Hilbert space}}
+\nomenclature{$\mathbb{N}$}{Numeri naturali - \textit{Natural numbers}}
+\nomenclature{$E$}{Banach space}
+\nomenclature{$\textrm{U}$}{Gruppo di Lie degli operatori unitari}
+\nomenclature{$\pazocal{U}$}{Gruppo degli operatori unitari nello spazio di Hilbert (usato in QM)}
+\nomenclature{$\mathfrak{g}$}{Algebra di Lie - \textit{(matrix) Lie algebra}}
 
 \renewcommand{\nomname}{Notazione} % Rename the default 'Nomenclature'
 \renewcommand{\nompreamble}{Il seguente elenco descrive alcuni simboli che sono usati in questo documento.} % Prepend this text to the nomenclature

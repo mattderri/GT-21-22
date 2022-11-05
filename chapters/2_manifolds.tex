@@ -1,7 +1,5 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-%\chapter{Finto}
-%\newpage
 \setchapterimage[6.5cm]{images/Polar_stereographic_projections}
 \setchapterpreamble[u]{\margintoc}
 \chapter[Manifolds]{Manifolds\footnotemark[0]}
@@ -11,7 +9,7 @@ Let us anticipate that
 \[
 \text{\parbox{4 cm}{\centering n-dimensional \\[-4pt]  (smooth) manifold}}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize circa};}}{\simeq}\text{\parbox{4 cm}{\centering n-dimensional \\[-4pt]  (smooth) surface}}
 \]
-We can visualize a 2-dimensional smooth surface, for example the thorus in \reffig{Torus}, represented as a subset of $\mathbb{R}^3$. 
+We can visualize a 2-dimensional smooth surface, for example the torus in \reffig{Torus}, represented as a subset of $\mathbb{R}^3$. 
 \begin{figure}[H]
 	\includegraphics[width=1\textwidth]{images/Toro.pdf}
 	\caption[Torus]{Representation of a 2-dimensional torus in $\mathbb{R}^3$ with the point $P$ and its tangent vector $v$.}
@@ -26,7 +24,7 @@ t &\mapsto \gamma(t)
 \]
 with $\gamma(0)=P$. Once we defined this path, we can consider its velocity (the derivative with respect to this pseudo time), in particular the velocity at time $0$ will be a tangent vector to the surface at the point $P\in S$
 \[
-\frac{d}{dt}\gamma(t)\Bigr|_{\substack{t=0}}\equiv\Dot{\gamma}(0)=\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Tangent vector at the point $p\in S$};}}{V}\in\mathbb{R}^3
+\dv{t}\gamma(t)\Bigr|_{\substack{t=0}}\equiv\Dot{\gamma}(0)=\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Tangent vector at the point $p\in S$};}}{V}\in\mathbb{R}^3
 \]
 Now with the notion of tangent vector, we can define what is a tangent space.
 \begin{definition}[Tangent space]\index{Tangent space}
@@ -44,9 +42,9 @@ The cotangent space is the dual of the tangent space
 V_P^*=\begin{Bmatrix}\alpha:V_P \rightarrow \mathbb{R} \ \mbox{ linear}\end{Bmatrix}=T_P^* S
 \]
 \end{definition}
-But there is something unpleasant in all the description we have done: the embedding in an ambient space. Everything we said it is correct, but it might depend on the fact that our 2-dimensional torus is embedded in $\mathbb{R}^3$ and someone else could decide to embed it in $\mathbb{R}^4$. The approach we described is called the \textbf{extrinsic} viewpoint and it traces back to: Gauss = Gauß (\underline{credits}), who realised that there are some properties of surfaces which depends on the embedding: \textbf{extrinsic} properties.
+But there is something unpleasant in all the description we have done: the embedding (\textit{immersione} in Italian) in an ambient space. Everything we said it is correct, but it might depend on the fact that our 2-dimensional torus is embedded in $\mathbb{R}^3$ and someone else could decide to embed it in $\mathbb{R}^4$. The approach we described is called the \textbf{extrinsic} viewpoint and it traces back to Gauss = Gauß (\underline{credits}). He realised that there are some properties of surfaces which depend on the embedding: \textbf{extrinsic} properties.
 \section[The intrinsic viewpoint]{Introduction: The intrinsic viewpoint}\marginnote{\underline{Credits:} Gauss, Riemann, ...,  Weyl}
-Gauß himself realized that there were some properties of surfaces, that are independent of the embedding in a larger space. This properties are called \textbf{intrinsic} properties, hence it would be nice to have an intrinsic viewpoint: define an n-dimensional (smooth) surface, without the ambient space.\sidenote{Why should we be interested in this generalization? Because we are physicist and if we want to describe space-time, we need an intrinsic viewpoint. Even if our friend from string theory told us that our 4-dimensional space-time is just a sub-manifold of a ten(eleven)-dimensional larger object. It might be true or false, but in this way the problem is just postponed: then we have to describe this eleven-dimensional geometric object with some embedding. You are forced to invoke something that is non-physical to describe something that is physical.} The idea comes from cartography\sidenote{We all learned at school that there is no cartographic map of the all surface of Earth, but locally we can represent it by something flat: a piece of paper.}
+Gauß himself realized that there were some properties of surfaces, that are independent of the embedding\sidenote{embedding = \textit{immersione} in Italian.} in a larger space. These properties are called \textbf{intrinsic} properties, hence it would be nice to have an intrinsic viewpoint: define an n-dimensional (smooth) surface, without the ambient space.\sidenote{Why should we be interested in this generalization? Because we are physicist and if we want to describe space-time, we need an intrinsic viewpoint. Even if our friend from string theory told us that our 4-dimensional space-time is just a sub-manifold of a ten(eleven)-dimensional larger object. It might be true or false, but in this way the problem is just postponed: then we have to describe this eleven-dimensional geometric object with some embedding. You are forced to invoke something that is non-physical to describe something that is physical.} The idea comes from cartography\sidenote{We all learned at school that there is no cartographic map of the all surface of Earth, but locally we can represent it by something flat: a piece of paper.}
 \[
 \textrm{\underline{Keywords:} local chart, atlas, } \dots \textrm{(cartography)}
 \]
@@ -80,26 +78,18 @@ The main message is that there is an intrinsic mathematical object, the point $P
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Precise definitions}
 \paragraph{Mapping \sidecite{ferrari2020general}}
-\begin{marginfigure}[17mm]
-	\includegraphics{images/mappa_vettoriale.pdf}
-	\caption[Mapping from $\mathbf{M}$ to $\mathbf{M}$]{Mapping from $\mathbf{M}$ to $\mathbf{N}$. Figura presa da \cite{ferrari2020general}.}
-	\labfig{mappa}
-\end{marginfigure}
 \begin{definition}[Map - Mappa]
 A map\index{Map} $f$ from a space $\mathbf{M}$ to a space $\mathbf{N}$ is a rule which associates en element $\mathbf{x}$ of $\mathbf{M}$ to a unique element $\mathbf{y}=f(\mathbf{x})$ of $\mathbf{N}$. The space $\mathbf{M}$ and $\mathbf{N}$ need not to be different.
 \end{definition}
-It is also said that $f$ maps a points $\mathbf{x} \in \mathbf{M}$ \textit{into} a point $f(\mathbf{x}) \in \mathbf{N}$. The statement “$f$ maps $\mathbf{M}$ into $\mathbf{M}$” is indicated as \[f : \mathbf{M} \rightarrow  \mathbf{N}\]
+It is also said that $f$ maps a points $\mathbf{x} \in \mathbf{M}$ \textit{into} a point $f(\mathbf{x}) \in \mathbf{N}$. The statement “$f$ maps $\mathbf{M}$ into $\mathbf{N}$” is indicated as \[f : \mathbf{M} \rightarrow  \mathbf{N}\]
 In addition, $f$ maps a particular element $\mathbf{x} \in \mathbf{M}$ into $\mathbf{y} \in \mathbf{N}$; the mapping is indicated as
 \[
 f : \mathbf{x} \mapsto  \mathbf{y}
-\]
-\begin{marginfigure}
-	\includegraphics{images/immagine_e_inversa_mappa.pdf}
-	\caption[Image and inverse image of a mapping.
-]{Image and inverse image of a mapping. Figura presa da \cite{ferrari2020general}.}
-	\labfig{imm_e_inv_mappa}
-\end{marginfigure} 
-The image of a point $x$ is $f(x)$. We can introduce the following definitions:
+\]\begin{marginfigure}[15mm]
+	\includegraphics{images/mappa_vettoriale.pdf}
+	\caption[Mapping from $\mathbf{M}$ to $\mathbf{M}$]{Mapping from $\mathbf{M}$ to $\mathbf{N}$. Figura presa da \cite{ferrari2020general}.}
+	\labfig{mappa}
+\end{marginfigure}The image of a point $x$ is $f(x)$. We can introduce the following definitions:
 \begin{itemize}
     \item If every point of $\mathbf{N}$ has an inverse image (but not necessarily a unique one), it is a map from $\mathbf{M}$ onto $\mathbf{N}$, and it is called a surjective map.
     \item If, for any point of $\mathbf{N}$ which has an inverse image in $\mathbf{M}$, the inverse image is unique, the map is said to be injective.
@@ -107,7 +97,13 @@ The image of a point $x$ is $f(x)$. We can introduce the following definitions:
     \item If the map is one-to-one, every point of $\mathbf{M}$ corresponds to one and only one point of $\mathbf{N}$, and vice versa; therefore, bijective maps are invertible.
     \item Inverse mapping is possible only in the case of one-to-one mapping. The inverse map to $f$ is indicated as $f^{-1}$
 \end{itemize}
-\begin{marginfigure}[-20mm]
+\begin{marginfigure}[-80mm]
+	\includegraphics{images/immagine_e_inversa_mappa.pdf}
+	\caption[Image and inverse image of a mapping.
+]{Image and inverse image of a mapping. Figura presa da \cite{ferrari2020general}.}
+	\labfig{imm_e_inv_mappa}
+\end{marginfigure} 
+\begin{marginfigure}[-40mm]
 	\includegraphics{images/composizione_mappe.pdf}
 	\caption[Composition of maps]{Composition of maps. Figura presa da \cite{ferrari2020general}.}
 	\labfig{comp_maps}
@@ -120,7 +116,7 @@ g \circ f : \mathbf{M} \to \mathbf{P}
 This means the following: take a point $x \in \mathbf{M}$ and find the image $f(x) \in \mathbf{N}$, then use $g$ to map this point to a point $g(f(\mathbf{x})) \in \mathbf{P}$ (\reffig{comp_maps}).
 
 \begin{definition}[local chart]
-A \textbf{local chart}\footnote{We omit the word "local" from now on. A chart is local unless we explicitly say that is global.}\index{Local chart},  or local coordinate system, or local coordinate frame, on a set $M$ is an \underline{\textbf{injective}} map
+A \textbf{local chart}\footnote{We omit the word "local" from now on. A chart is local unless we explicitly say that is global.}\index{Local chart},  or local coordinate system, or local coordinate frame, on a set $\mathbf{M}$ is an \underline{\textbf{injective}} map
 \[
 \varphi: \varphi^{-1}(u)\subseteq \mathbb{R}^n \ \rightarrow \ \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Arrival set};}}{u} \subseteq \mathbf{M}
 \]
@@ -136,7 +132,9 @@ The open sets of $\mathbb{R}^n$ satisfy the following properties:
 \left(u,\varphi\right)
 \).
 \end{definition}
-Let $u$ and $\Tilde{u}$ be two overlapping open sets of $\mathbf{M}$ with two distinct maps from $\mathbb{R}^n$ into a subset of $\mathbf{M}$. The overlap $u\cup\tilde{u}$ is open (since it is the intersection of two open sets), and is given two different coordinate systems by the two maps. Thus, there must exist some relation between these maps, which we want to find.\\
+Let $u$ and $\Tilde{u}$ be two overlapping open sets of $\mathbf{M}$ with two distinct maps from $\mathbb{R}^n$ into a subset of $\mathbf{M}$. The overlap $u\cup\tilde{u}$ is open (since it is the intersection of two open sets), and is given two different coordinate systems by the two maps. Thus, there must exist some relation between these maps, which we want to find.
+
+
 As shown in the lower panel of \reffig{Coordinate-transformation}, pick a point $\mathbf{x}=(x^1,\dots,x^n)$ in the image of the
 overlapping region belonging to $\varphi^{-1}(u)$, i.e. $\varphi^{-1}(w)$. Then, use the inverse of the map $\tilde\varphi$, i.e. $\tilde{\varphi}^{-1}$, to go from $p$ to its image belonging to  $\tilde{\varphi}^{-1}(w)$, i.e. to
 the point $\tilde{\mathbf{x}}=(\tilde{x}^1,\dots,\tilde{x}^n)$ in $\mathbb{R}^n$,
@@ -155,7 +153,7 @@ We will indicate the coordinate tranformation as
 \begin{equation}\label{eq:coord-trans}
 \begin{cases}
 \mathbf{x}=\mathbf{x}(\tilde{\mathbf{x}})\ \left[=\varphi^{-1}\circ\tilde{\varphi}(\tilde{\mathbf{x}})\right]\\
-\tilde{\mathbf{x}}=\tilde{\mathbf{x}}(\tilde{\mathbf{x}})\ \left[=\tilde{\varphi}^{-1}\circ\tilde{\varphi}(\tilde{\mathbf{x}})\right]
+\tilde{\mathbf{x}}=\tilde{\mathbf{x}}(\mathbf{x})\ \left[=\tilde{\varphi}^{-1}\circ\varphi(\mathbf{x})\right]
 \end{cases}
 \end{equation}
 \end{kaobox}
@@ -185,16 +183,16 @@ Let $\mathbf{M}$ be a set. Two local charts $(u,\varphi)$ and $(\tilde{u},\tilde
 \begin{kaobox}[frametitle=Notice]
 Both $\varphi^{-1}\circ\tilde{\varphi}$ and $\tilde{\varphi}^{-1}\circ\varphi$ are maps between \textbf{open subset of $\mathbb{R}^n$}, so we know what $C^\infty$-\href{https://it.wikipedia.org/wiki/Funzione_liscia}{smooth} means: infinitely differentiable (differentiable everywhere, hence continuous, infinitely many times).\marginnote[-4 mm]{Smooth function = "Funzione liscia" in Italian.}
 \end{kaobox}
-\begin{example}[easy]
+\begin{exercise}[easy]
 Let $\mathbf{M}=\mathbb{R}^2$. Consider two charts:
 \begin{enumerate}
-    \item \((u,\varphi)=(\mathbb{R}^2, \textrm{ cartesian coordinates})\)
-    \item \((\tilde{u},\tilde{\varphi})=(\mathbb{R}^2\setminus\{0\}, \textrm{ cartesian coordinates})\)
+    \item \((u,\varphi)=(\mathbb{R}^2, \quad \textrm{ cartesian coordinates})\)
+    \item \((\tilde{u},\tilde{\varphi})=(\mathbb{R}^2\setminus\{0\}, \textrm{ polar coordinates})\)
 \end{enumerate}
 Write explicitly $\varphi^{-1}(w)$, $\tilde{\varphi}^{-1}(w)$ and check that $\Tilde{\varphi}^{-1}\circ{\varphi}$ and $\varphi^{-1}\circ\Tilde{\varphi}$ are smooth, hence the charts are compatible.
-\end{example}
+\end{exercise}
 \begin{definition}[Atlas - Atlante]
-An \index{Atlas}\textbf{atlas} for $\mathbf{M}$ is a family of local charts \(\left\{(u_{\alpha},\varphi_{\alpha})\right\}_{\alpha\in A}\) such that one of the following:
+An \index{Atlas}\textbf{atlas} for $\mathbf{M}$ is a family of local charts \(\left\{(u_{\alpha},\varphi_{\alpha})\right\}_{\alpha\in A}\) such that:
 \begin{enumerate}
     \item $$\bigcup_{\alpha\in A}u_{\alpha}=\mathbf{M}$$
     \item for every pair $(\alpha,\beta)$ the charts $(u_{\alpha},\varphi_{\alpha})$ and $(u_{\beta},\varphi_{\beta})$ are $\mathbf{C}^{\infty}$ \textbf{-compatible}
@@ -202,7 +200,7 @@ An \index{Atlas}\textbf{atlas} for $\mathbf{M}$ is a family of local charts \(\l
 \end{definition}
 Now we want to define a smooth-Manifold. We could say that is the pair of a set $\mathbf{M}$ equipped with an atlas $A$. The idea is this one, but that is not exactly correct. If we use this definition, we could encounter paradoxes.
 \begin{kaobox}[frametitle=Remark]
-Atlas on a set $\mathbf{M}$ are naturally \textbf{ordered}\footnote{Ordered, but not "well-ordered" ("\href{https://it.wikipedia.org/wiki/Buon_ordine}{ben ordinato}"), this is why I could arrive to the same maximal atlas from another branch. In general there will be infinitely many branches.}:\\
+Atlas on a set $\mathbf{M}$ are naturally \textbf{ordered}\footnote{Ordered, but not "well-ordered" ("\href{https://it.wikipedia.org/wiki/Buon_ordine}{ben ordinato}"), this is why we could arrive to the same maximal atlas from another branch. In general there will be infinitely many branches.}:\\
 $A\subseteq \tilde{A}$ if every chart in $A$ is also a chart in $\tilde{A}$ [and henche compatible with every chart in $\tilde{A}\setminus A$]. By abstract results/reasons (\href{https://it.wikipedia.org/wiki/Lemma_di_Zorn}{Zorn's lemma})\marginnote{Zorn's lemma is equivalent to the \href{https://it.wikipedia.org/wiki/Assioma_della_scelta}{axiom of choice }.\\\href{https://it.wikipedia.org/wiki/Lemma_di_Zorn}{Zorn's lemma}:\index{Zorn's lemma} Suppose a partially ordered set $P$ has the property that every chain in $P$ has an upper bound in $P$. Then the set $P$ contains at least one maximal element.}, given $A_0$, there exist a \textbf{maximum element} $A_{\textrm{max}}$, i.e.
 \[
 \begin{split}
@@ -222,7 +220,7 @@ If there exist another maximal atlas, say $B_{\textrm{max}}$, we say that $\math
 This is the case for \href{https://en.wikipedia.org/wiki/Exotic_R4}{$\mathbb{R}^4$}, but not for $\mathbb{R}^2$ and $\mathbb{R}^3$.}
 \end{kaobox}
 This $A_{\textrm{max}}$ it is not something we can touch with our hands: it is like the library of all books that has been written and that of those that will be written in the future. We know it exists, but we do not need to describe it. Instead, what we are going to do is to specify a smaller one, and this determines the maximal element. Now we are ready for our definition.\marginnote{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} You are not really supposed to specify $A$!! You are supposed to \underline{specify an atlas $A_0$}, and $A_0$ determines a corresponding maximal atlas.}
-\begin{definition}[Differential manifold - Varietà differenziabile]
+\begin{definition}[Differential manifold - Varietà differenziabile]\labdef{diff-man}
 A (smooth) \textbf{manifold} \index{Differential manifold} is a pair $(\mathbf{M},A)$ where $\mathbf{M}$ is a set and $A$ is a \underline{\textbf{maximal}} atlas.
 \end{definition}
 \paragraph{Explanation: Why the hell do we need maximality??}
@@ -253,9 +251,9 @@ A_{\textrm{ortho}}:=\left\{\left(u_+,\varphi_+\right), \left(u_-,\varphi_-\right
 	\caption[Stereographic projection of a circle]{Stereographic projection of a circle}
 	\labfig{circle-stereo-proj}
 \end{figure} 
-But I have another choice that is also very convenient: \textbf{Stereographic projection} from the North Pole, that is represented in \labfig{circle-stereo-proj}
+But I have another choice that is also very convenient: \textbf{Stereographic projection} from the North Pole, that is represented in \reffig{circle-stereo-proj}
 \begin{itemize}
-    \item To the North Pole (N) we associate the point $0$ in the local chart, and to the point $x$ a unique point which on the segment from $x$ to $N$.
+    \item To the South Pole (N) we associate the point $0$ in the local chart, and to the point $x$ a unique point which on the segment from $x$ to $N$.
 \end{itemize}
 Of course we could to the same from the South Pole.
 \[
@@ -320,7 +318,7 @@ A_{\textrm{stereo}}:=\left\{\left(u_N,\varphi_N\right), \left(u_S,\varphi_S\righ
 \end{marginfigure} 
 \begin{example}\labexercise{torus}
 \textbf{Torus - Toro}: the intrinsic viewpoint\\
-This examples is simple, but it shows why sometimes is convenient to use the intrinsic viewpoint. Take $\mathbb{R}^2$ and two linearly independent vectors, not necessarily orthogonal $\mathbf{a_1},\mathbf{a_2}$, as in \reffig{bravais-lattice}. There consider all the points of $\mathbb{R}^2$ that are obtained by taking linear combinations with integer coefficients of these two vectors. This is called a \textbf{Bravais lattice - reticolo di Bravais}.\index{Bravais lattice}
+This examples is simple, but it shows why sometimes is convenient to use the intrinsic viewpoint. Take $\mathbb{R}^2$ and two linearly independent vectors, not necessarily orthogonal $\mathbf{a_1},\mathbf{a_2}$, as in \reffig{bravais-lattice}. Then, consider all the points of $\mathbb{R}^2$ that are obtained by taking linear combinations with integer coefficients of these two vectors. This is called a \textbf{Bravais lattice - reticolo di Bravais}.\index{Bravais lattice}
 \[
 \begin{split}
     \Gamma 
@@ -332,7 +330,7 @@ Now we can take the \textbf{quotient} to identify vectors $x,\tilde{x}\in\mathbb
 \[
 \textrm{Equivalence relation}: x\sim \tilde{x} \Leftrightarrow \exists \ \gamma \in \Gamma: \tilde{x}=x+\gamma
 \]
-How many equivalent classes there are? Every point $P$ inside the \href{https://it.wikipedia.org/wiki/Rombo_(geometria)}{rhombus} represent an equivalent class. What about the boundary? We see that the points $x$ and $\tilde{x}$ in \labfig{bravais-lattice-zoom} and in the same equivalent class, since they differ by $a_2$. Therefore the set of equivalent classes is the rhombus, and let us choose to orientate the edges with the same orientation, as represented in the same figure. You may recognise that this is topologically a torus (see \reffig{torus-constr}).\marginnote[-9mm]{This example is inspired by solid state physics.}\marginnote[-1mm]{It depends on gamma, because even if it is always topologically a torus, they can be different tori.}
+How many equivalent classes there are? Every point $P$ inside the \href{https://it.wikipedia.org/wiki/Rombo_(geometria)}{rhombus} represent an equivalent class. What about the boundary? We see that the points $x$ and $\tilde{x}$ in \reffig{bravais-lattice-zoom} and in the same equivalent class, since they differ by $a_2$. Therefore the set of equivalent classes is the rhombus, and let us choose to orientate the edges with the same orientation, as represented in the same figure. You may recognise that this is topologically a torus (see \reffig{torus-constr}).\marginnote[-9mm]{This example is inspired by solid state physics.}\marginnote[-1mm]{It depends on gamma, because even if it is always topologically a torus, they can be different tori.}
 \[
 \textrm{The quotient }\  \mathbb{R}^2/\Gamma =: \Pi^2_{\Gamma} \ \textrm{ is called \textbf{Brillouin torus}}
 \]
@@ -343,30 +341,103 @@ This is an example of a set which is not canonically embedded in $\mathbb{R}^d$ 
 	\caption[How to construct a torus]{Visual explanation of why, with an equivalent class, a Brillouin plane is equivalent to a torus. In the last passage we "glued" the two circular edges.}
 	\labfig{torus-constr}
 \end{figure*}
-\begin{example}
-Find an atlas of local charts, without embedding $\Pi^2_{\Gamma}$ in some $\mathbb{R}^n$. 
-\end{example}
+\begin{exercise}
+Find an atlas of local charts, without embedding $\Pi^2_{\Gamma}$ in some $\mathbb{R}^n$.
+\end{exercise}
 \begin{kaobox}[frametitle=Remark]
-The same construction works in $\mathbb{R}^d$ with \[
+The same construction works in $\mathbb{R}^d$ with \(
 \Gamma=\textrm{Span}_{\mathbb{Z}}\left\{a_1,a_2,\dots,a_d\right\}
-\]
+\).
 \end{kaobox}
-\begin{example}
-\textbf{\href{https://it.wikipedia.org/wiki/Bottiglia_di_Klein}{Klein bottle} - Bottiglia di Klein}\index{Klein bottle}\\
-We can start again from a square or a rhombus. This time of the two edges is identified with the other with the \textit{opposite} orientation. With this choice you get the figure represented in \reffig{klein-bottle}. There are two procedures to do so:
-\begin{enumerate}
-    \item You can glue first the purple lines. Then you can bend that and glue them with a \textit{twist}\footnote{You cannot imagine to do that, you need to be in $\mathbb{R}^{\geq 4}$ to visualize it.}.
-    \item First you do the twist, and then you glue the two short edges obtaining a Möbius strip - \href{https://it.wikipedia.org/wiki/Nastro_di_M\%C3\%B6bius}{Nastro di Möbius}. Then you can glue them in $\mathbb{R}^4$
-\end{enumerate}
-\end{example}
 \begin{figure*}[h!]
 	\includegraphics{images/klein_bottle.pdf}
 	\caption[How to construct a Klein Bottle]{Two ways to create a Klein bottle. In both cases, to perform the last glueing you need to be in $\mathbb{R}^4$.}
 	\labfig{klein-bottle}
 \end{figure*}
 \begin{example}
-(Guided) Do the computations in \sidecite{doCarmo1994} (pages 36-37) to endow the Klein bottle with the structure of a manifold.\marginnote[3mm]{Basically is asking you to define an atlas}
+\textbf{\href{https://it.wikipedia.org/wiki/Bottiglia_di_Klein}{Klein bottle} - Bottiglia di Klein}\index{Klein bottle}\\
+We can start again from a square or a rhombus. This time of the two edges is identified with the other with the \textit{opposite} orientation. With this choice you get the figure represented in \reffig{klein-bottle}. There are two procedures to do so:
+\begin{enumerate}
+    \item You can glue first the purple lines. Then you can bend that and glue them with a \textit{twist}\footnote{You cannot imagine to do that, you need to be in $\mathbb{R}^{\geq 4}$ to visualize it.}.
+    \item First you do the twist, and then you glue the two short edges obtaining a Möbius strip - \href{https://it.wikipedia.org/wiki/Nastro_di_M\%C3\%B6bius}{Nastro di Möbius}. Then you can glue them in $\mathbb{R}^4$.
+\end{enumerate}
 \end{example}
+\begin{marginfigure}[50mm]
+	\includegraphics[width=1\linewidth]{images/klein_bottle.jpg}
+	\caption[Picture from Do Carmo]{}
+	\labfig{klein-bottle-do-carmo}
+\end{marginfigure} 
+\begin{marginfigure}[70mm]
+	\includegraphics[width=1\linewidth]{images/n-diff-manifold-do-carmo.jpg}
+	\caption[Picture from Do Carmo]{}
+	\labfig{n-diff-manifold-do-carmo}
+\end{marginfigure}
+\begin{exercise}
+(Guided) Do the computations in \sidecite{doCarmo1994} (pages 36-37) to endow the Klein bottle with the structure of a manifold.\marginnote[3mm]{Basically is asking you to define an atlas}
+
+
+---
+
+The Klein bottle is the subset of $\mathbb{R}^4$ defined as follows (\reffig{klein-bottle-do-carmo}). Let $Ox,Oy,Oz,Ow$ be the four coordinate axis in $\mathbb{R}^4$. Let $S$ be a circle with radius $r$, contained in the plane $xOz$, with center $C$ in the axis $Ox$ so that $C$ is at a distance $a>r$ from 0. The Klein bottle is generated by rotating this circle around $Oz$ in such a way that when the center $C$ has described a rotation of angles $u/2$ around $OC$ in the 3-space $OCOzOw$ (this is possible because we are in $\mathbb{R}^4$).
+
+Let $u$ and $v$ be as \reffig{n-diff-manifold-do-carmo}, and let $U_1\subset \mathbb{R}^2$ given by
+\[
+U_1=\Bqty{(u,v) \in \mathbb{R}^2; \quad 0<u<2\pi, \ 0<v<2\pi}
+\]
+Now define a map $f_1:U_1\to\mathbb{R}^4$ by
+\[
+f_1(u,v)=
+\begin{cases}
+x&=(r\cos v + a ) \cos u\\
+y&=(r\cos v + a ) \sin u\\
+z&=r\sin v \cos u/2\\
+w&=r\sin v \sin u/2
+\end{cases}
+\]
+It is clear that $f_1(U_1)$ contains the points of the Klein bottle that are not on the circles $u=0$ and $v=0$. We claim that $f_1$ is injective.
+
+To see that, let us first assume that $z\neq 0$. Then both $\sin v$ and $\cos u/2$ are nonzero. Since $0<u/2<\pi$, the expression $\frac{w}{z}=\tan\frac{u}{2}$ determines $u$. By knowing $u$, we can use that
+\[
+\sin v = \frac{w}{r\sin\frac{u}{2}}, \qquad \cos v = \frac{+\sqrt{x^2+y^2}-a}{r}
+\]
+to determine $v$. This proves our claim if $z\neq 0$. If $z=0$ than $v=\pi$ or $u=\pi$, and again injectivity is easily checked.
+
+It can be shown that if we change the origin of $u$ and the origin of $v$, we can cover the whole Klein bottle by the images of maps similar to the above. For instance, if we define a map $f_2:U_2\to \mathbb{R}^4$ given by
+\[
+f_2
+\begin{cases}
+x&= -(r\cos\Bar{v}+a)\sin\Bar{u}\\
+y&=(r\cos\Bar{v}+a)\cos\Bar{u}\\
+z&=r\sin\Bar{v}\cos\left(\frac{\Bar{u}}{2}+\frac{\pi}{4}\right)\\
+w&= r\sin\Bar{v}\sin{\left(\frac{\Bar{u}}{2}+\frac{\pi}{4}\right)}
+\end{cases}
+\qquad (\Bar{u},\Bar{v})\in U_2
+\]
+(geometrically, this means that we measure $\Bar{u}$ from $Oy$), we see that $f_2(U_2)$ includes the points of the Klein bottle with $u=0$. It is easily checked that $f_2$ is injective. Notice that $f_1(U_1)\cap f_2(U_2)=W$ is not connected but has two connected components:
+\[
+W_1=\Bqty{f_1(u,v);\ \frac{\pi}{2}<u<2\pi}, \quad W_2=\Bqty{f_1(u,v); \ 0 < u <\frac{\pi}{2}}.
+\]
+The change of coordinated is given by
+\[
+\begin{split}
+    f_2^{-1}\circ f_1 &
+    \begin{cases}
+    \Bar{u}&= u-\pi/2\\
+    \Bar{v}&=v
+    \end{cases}
+    \qquad \textrm{in } W_1\\
+    f_2^{-1}\circ f_1 &
+    \begin{cases}
+    \Bar{u}&= u+3\pi/2\\
+    \Bar{v}&=2\pi-v
+    \end{cases}
+    \qquad \textrm{in }W_2
+\end{split}
+\]
+which is clearly differentiable.
+
+In a similar way, we can find an injective map $f_3:U_3\to\mathbb{R}^4$ whose image covers the Klein bottle minus the circle $v=0$ (this amounts to change the origin of $v$). It also is not difficult to check that the changes of coordinated $f_j^{-1}\circ f_i, \ i,j=1,2,3$, are differentiable, and this shows that the family $(f_i, U_i)$ is a differentiable structure on the Klein bottle. 
+\end{exercise}
 \section[Differentiables maps]{Differentiables maps (functions\sidenote{"Map" and "Function" are synonymous, usually one uses \textit{function} when have values in some numeric field and \textit{map} otherwise.})}
 Let (the pair)\sidenote{We will omit the fact that is a pair} $\mathbf{M}=\left(\mathbf{M}, A\right)$ be a manifold. What does it mean that a map $f:\mathbf{M}\to\mathbb{R}$ is $\mathbf{C^\infty}$\textbf{smooth}?
 \begin{marginfigure}
@@ -375,9 +446,9 @@ Let (the pair)\sidenote{We will omit the fact that is a pair} $\mathbf{M}=\left(
 	\labfig{c-inf-smooth-map}
 \end{marginfigure}
 \begin{itemize}
-    \item Let us take a local chart as in \labfig{c-inf-smooth-map} and we go in the local coordinates $x_1,x_2$, we have a map by composing $f$ and $\varphi$. This is map from an open subset of $\mathbb{R}^n$ to $\mathbb{R}$.
+    \item Let us take a local chart as in \reffig{c-inf-smooth-map} and we go in the local coordinates $x_1,x_2$, we have a map by composing $f$ and $\varphi$. This is map from an open subset of $\mathbb{R}^n$ to $\mathbb{R}$.
     \item Then we can see that the map $f$ is differential at the point $P$ if the induced map (the local version of  $\varphi$), i.e. $f\circ\varphi$, is differentiable  at the point $\varphi^{-1}(P)$.
-    \item This does not depend on the chart, because if we change local chart, the change of coordinates if $C^\infty$-smooth and if we compose two maps that are $C^\infty$-smooth we still get a map which is $C^\infty$-smooth.
+    \item This does not depend on the chart, because if we change local chart, the change of coordinates is $C^\infty$-smooth (by definition of differentiable manifold) and if we compose two maps that are $C^\infty$-smooth we still get a map which is $C^\infty$-smooth.
 \end{itemize}
 The trick is that, since all the possible change of coordinates in out maps in the atlas are $C^\infty$-compatible, if it happens that a map is differentiable at $P$ with respect to one local chart, therefore it is differentiable in $P$ with respect to every other local chart in the atlas.
 \begin{definition}[Differentiable map]
@@ -403,11 +474,10 @@ Similarly we can do the same for a \textbf{continuous} map $f$ (see \refdef{cont
     \]
 \end{itemize}
 Since it goes from an open subset of $\mathbb{R}^n$ to an open subset of $\mathbb{R}^n$. We know what it means that is differentiable in this case. Be careful because the fact that the map is differentiable does not depend on the charts we choose (it is intrinsic), but the explicit form of the Jacobian matrix of $f$ does depend. Another intrinsic property is the \textit{rank} of the Jacobian matrix.
-\paragraph{The Jacobian \cite{ferrari2020general}}
+\paragraph{The Jacobian \sidecite{ferrari2020general}}
 The notion of differentiable manifold is crucial, because it allows to add “structure” to
 the manifold, i.e. to define vectors, tensors, differential forms, Lie derivatives, etc. In order
-to complete the definition of coordinate transformation we still need to clarify the following.\\
-Let us write equation (\ref{eq:coord-trans}) in the form \[
+to complete the definition of coordinate transformation we still need to clarify the following. Let us write equation (\ref{eq:coord-trans}) in the form \[
 y^i=f^i(x^1,\dots,x^n) \quad,\quad i=1,\dots,n
 \]
 where $f^i$ are $C^k$-differentiable. Let $J$ be the Jacobian of the transformation 
@@ -420,18 +490,17 @@ J=\frac{\partial(f^1,\dots,f^n)}{\partial(x^1,\dots,x^n)}=\det
 \frac{\partial f^n}{\partial x^1} & \frac{\partial f^n}{\partial x^2} & \dots & \frac{\partial f^n}{\partial x^n}
 \end{pmatrix}
 \]
-If $J$ is non-zero at come point $\mathbf{p}$, then the inverse function theorem ensures that the map $f$ is one-to-one in some neighbourhood of $\mathbf{p}$. If $J$ is zero in $\mathbf{p}$ the transformation is singular\index{Singular transformation}.\\
-Since a coordinate transformation must be one-to-one in its domain, $J$ must not vanish in this domain.
-\begin{definition}[Diffeomorphism - Diffeomorfismo]
-Let $\mathbf{M}$ and $\mathbf{N}$ be ($C^\infty-smooth$) manifolds. A \textbf{diffeomorphism} between $\mathbf{M}$ and $\mathbf{N}$ is a bijection
+If $J$ is non-zero at come point $\mathbf{p}$, then the inverse function theorem ensures that the map $f$ is one-to-one in some neighbourhood of $\mathbf{p}$. If $J$ is zero in $\mathbf{p}$ the transformation is singular\index{Singular transformation}. Since a coordinate transformation must be one-to-one in its domain, $J$ must not vanish in this domain.
+\begin{definition}[Diffeomorphism - Diffeomorfismo]\index{Diffeomorphism}
+Let $\mathbf{M}$ and $\mathbf{N}$ be ($C^\infty$-smooth) manifolds. A \textbf{diffeomorphism} between $\mathbf{M}$ and $\mathbf{N}$ is a bijection
 \[
 \begin{tikzcd}
 \mathbf{M}\rar{f} & \arrow[red, bend left]{l}[black,swap,below]{\color{red}f^{-1}} \mathbf{N}
 \end{tikzcd}
 \]
-such that both $f$ and $f^{-1}$ are $\mathbf{C}^\infty$\textbf{-smooth.}\marginnote{Notice that is not automatic that the inverse is $C^\infty$-smooth, whenever $f$ is. This is in contrast to what happens with linear maps, if we have tow vector spaces and a linear map between them, which is also a bijection, the inverse is automatically linear.}
+such that both $f$ and $f^{-1}$ are $\mathbf{C}^\infty$\textbf{-smooth.}\marginnote{Notice that is not automatic that the inverse is $C^\infty$-smooth, whenever $f$ is. This is in contrast to what happens with linear maps, if we have two vector spaces and a linear map between them, which is also a bijection, the inverse is automatically linear.}
 \end{definition}
-\begin{definition}[Diffeomorphic]\index{Diffeomorphoic}
+\begin{definition}[Diffeomorphic]\index{Diffeomorphic}
 Two manifolds $\mathbf{M}$ and $\mathbf{N}$ are said to be \textbf{diffeomorphic} if there exists a diffeomorphism \(\mathbf{M}\xrightarrow{f}\mathbf{N}\).
 \end{definition}
 \begin{kaobox}[frametitle=Notation]

@@ -7,13 +7,13 @@
 
 \section{Unanswered questions}
 Is \textit{Symmetry} a property of nature or a a property of human mind?\\
-This chapter is more conceptual than mathematical, it is an introduction to the concept of symmetries in physics. \textbf{Groups} is just the name which mathematicians give to family of symmetries. But what really happens, the general paradigm, is a combination of symmetry theory and \href{https://en.wikipedia.org/wiki/Perturbation_theory}{perturbation theory}, since many real physical systems are not highly symmetric (for example the Helium and Lithium atoms are not solvable, while the Hydrogen atoms it is)
+This chapter is more conceptual than mathematical, it is an introduction to the concept of symmetries in physics. \textbf{Groups} is just the name which mathematicians give to family of symmetries. But what really happens, the general paradigm, is a combination of symmetry theory and \href{https://en.wikipedia.org/wiki/Perturbation_theory}{perturbation theory}, since many real physical systems are not highly symmetric (for example the Helium and Lithium atoms are not solvable, while the Hydrogen atoms it is).
 \begin{figure}[H]
 	\includegraphics[width=1\textwidth]{images/General_Paradigm.pdf}
 	\caption[General Paradigma]{General Paradigma. Integrable means that you can solve it up to computing integrals; it is a little bit weaker than solvable, solvable means that you can write a solution in terms of analytic functions.}
 	\labfig{General Paradigma}
 \end{figure}
-So we explore the world of highly symmetric systems, which are solvable (or, at least, integrable\sidenote{\href{https://it.wikipedia.org/wiki/Teorema_di_Liouville-Arnold}{Liouville–Arnold theorem}\index{Liouville–Arnold theorem}:\\ In dynamical systems theory, the Liouville–Arnold theorem states that if, in a Hamiltonian dynamical system with $n$ degrees of freedom, there are also $n$ independent, Poisson commuting first integrals of motion, and the energy level set is compact, then there exists a canonical transformation to action-angle coordinates in which the transformed Hamiltonian is dependent only upon the action coordinates and the angle coordinates evolve linearly in time. \textbf{Thus the equations of motion for the system can be solved in quadratures} if the level simultaneous set conditions can be separated}), and thanks to perturbation theory we explore the family of models which are around them. In this course we touch only the books on the left hand side of the \reffig{General Paradigma}. Before talking about symmetries we have to talk about transformations.
+So we explore the world of highly symmetric systems, which are solvable (or, at least, integrable\sidenote{\href{https://it.wikipedia.org/wiki/Teorema_di_Liouville-Arnold}{Liouville–Arnold theorem}\index{Liouville–Arnold theorem}:\\ In dynamical systems theory, the Liouville–Arnold theorem states that if, in a Hamiltonian dynamical system with $n$ degrees of freedom, there are also $n$ independent, Poisson commuting first integrals of motion, and the energy level set is compact, then there exists a canonical transformation to action-angle coordinates in which the transformed Hamiltonian is dependent only upon the action coordinates and the angle coordinates evolve linearly in time. \textbf{Thus the equations of motion for the system can be solved in quadratures} if the level simultaneous set conditions can be separated.}), and thanks to perturbation theory we explore the family of models which are around them. In this course we touch only the books on the left hand side of the \reffig{General Paradigma}. Before talking about symmetries we have to talk about transformations.
 \section{Transformations}
 We are interested in two kind of transformations:
 \[
@@ -36,10 +36,17 @@ First, let us start in the laboratory where we suppose having a physical system,
 \[
 \textrm{\textbf{Active} transformation}\ \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize We believe they should be equivalent};}}{\simeq}\ \textrm{\textbf{Passive} transformation}
 \]
-We call \index{Active transformation}\textit{active transformation} when the apparatus stay fixed. But maybe, we are not able to rotate the molecule and therefore we decide to rotate the measurement apparatus: we call this a \index{Passive transformation}\textit{passive transformation}. We believe that these two ways of approaching a transformation should be equivalent (i.e. experimentally indistinguishable), because we believe that the absolute position and absolute direction of physical system and apparatus are irrelevant. In fact, what is relevant is the \textbf{relative} position and orientation of the physical system \textit{with respect} to our apparatus.\sidenote{This is one of the funding principles of every theory, which will generalize in the \href{https://it.wikipedia.org/wiki/Principio_di_relativit\%C3\%A0}{principle of relativity}, but for now let us keep time frozen as specified in \vrefsec{Symmetry}}
-\begin{assumption}[Principle of \textbf{homogeneity} and \textbf{isotropic} of space]\labass{Principle-of-homogeneity} The outcomes of any experiment does not depend on the \textbf{absolute position} and \textbf{orientation} of the system and the apparatus [it depends only on the \textbf{relative position}]
+We call \index{Active transformation}\textit{active transformation} when the apparatus stay fixed. But maybe, we are not able to rotate the molecule and therefore we decide to rotate the measurement apparatus: we call this a \index{Passive transformation}\textit{passive transformation}. We believe that these two ways of approaching a transformation should be equivalent (i.e. experimentally indistinguishable), because we believe that the absolute position and absolute direction of physical system and apparatus are irrelevant. In fact, what is relevant is the \textbf{relative} position and orientation of the physical system \textit{with respect} to our apparatus.\sidenote{This is one of the funding principles of every theory, which will generalize in the \href{https://it.wikipedia.org/wiki/Principio_di_relativit\%C3\%A0}{principle of relativity}, but for now let us keep time frozen as specified in \vrefsec{Symmetry}.}
+\begin{assumption}[Principle of \textbf{homogeneity} and \textbf{\href{https://it.wikipedia.org/wiki/Isotropia}{isotropy}} of space]\labass{Principle-of-homogeneity}\index{Principle of homogeneity and isotropy of space} The outcomes of any experiment does not depend on the \textbf{absolute position} and \textbf{orientation} of the system and the apparatus [it depends only on the \textbf{relative position}].
 \end{assumption}
-This transformation $T$ is something which lives in the laboratory, so it is really a physical transformation, therefore we want to describe it in our mathematical theory. Hence to the transformation $T$ are associated two mathematical object which are \textbf{dual} to each other:\sidenote{The space of states is connected to the Schrödinger representation, while the observable algebra to the Heisenberg representation.}
+This transformation $T$ is something which lives in the laboratory, so it is really a physical transformation, therefore we want to describe it in our mathematical theory. Hence to the transformation $T$ are associated two mathematical object which are \textbf{dual} to each other:\sidenote{From \cite{picasso2015lezioni}: The space of states is connected to the Schrödinger representation:
+\[
+\ket{A,t}=U(t,0)\ket{A,t}
+\] while the observable algebra to the Heisenberg representation
+\[
+\xi \overset{\textrm{def}}{=}U(t)^\dag \xi U(t)
+\]
+}
 \begin{align*}
     S \xrightarrow{\hat{T}} S \quad \qquad  \qquad & \qquad \qquad \qquad \qquad A \xrightarrow{\tilde{T}} A\\
     S: \textrm{ space of states } \qquad & \qquad A: \textrm{ algebra of observable quantities}
@@ -68,10 +75,10 @@ Because of the \refass{Principle-of-homogeneity} we expect the two mathematical 
         \item \index{Measurement apparatuses}Measurement apparatuses.
     \end{itemize}
     If we combine the two we will obtain some numbers which are the outcomes of the measurement, which depend on the two boxes.
-    \item \textbf{Limbo:} Where we do some abstraction procedure, before translating our concept in the world of mathematics, since wee cannot hope to really have a general description\sidenote{Because every laboratory is different from every other and so are the measurements.}. Here we find two concepts:
+    \item \textbf{Limbo:} where we do some abstraction procedure, before translating our concept in the world of mathematics, since we cannot hope to really have a general description\sidenote{Because every laboratory is different from every other and so are the measurements.}. Here we find two concepts:
     \begin{itemize}
         \item \index{State}State: we will discuss it later.
-        \item \index{Elementary propositions/experiment}Elementary propositions/experiment: instead of considering all the possible measurement apparatuses, we will restrict, namely, to those experiment in which the possibles answers are only \textit{yes} (1) and \textit{no} (0).\sidenote{Instead of asking the position of the electron, which answer will be the three coordinates in a classical theory, we will ask ourselves: << Given a box $\Omega$ is the electron detected in this box? >>} This correspond in quantum mechanics to \index{Orthogonal projectors} \textit{orthogonal projectors}, whose eigenvalue are only $0$ and $1$.
+        \item \index{Elementary propositions/experiment}Elementary propositions/experiment: instead of considering all the possible measurement apparatuses, we will restrict, namely, to those experiment in which the possibles answers are only \textit{yes} (1) and \textit{no} (0).\sidenote{Instead of asking what the position of the electron is, whose answer will be the three coordinates in a classical theory, we will ask ourselves: << Given a box $\Omega$, is the electron detected inside this box? >>} This correspond in quantum mechanics to \index{Orthogonal projectors} \textit{orthogonal projectors}, whose eigenvalue are only $0$ and $1$.
     \end{itemize}
     Maybe we will not have time to do that, but one can prove that if we know the answer to all the possible elementary propositions (orthogonal projectors) in any state of the system, we will be able to reconstruct the answer to any other experiment (observable quantity).
     \item \textbf{Mathematics}: Here we will have two boxes that are theory-dependent: one which corresponds to the "Preparation procedures" and one which corresponds to the "Measurement apparatuses". The combinations of these two mathematical objects we will give us some numbers, which are our predictions.
@@ -96,17 +103,21 @@ S=\mathbb{R}^d\times \hat{\mathbb{R}}^d \ni \left(x,p\right)
 \]
 where $p$ is the momentum\footnote{We use the $\wedge$ symbol because it reminds the Fourier transform.}.
 \end{example}
-Let us reflect on what does it mean. In a sense it means that if we know position and momentum/velocity of the particle at the same time, in CM we know the solution forever\sidenote{The Newton equation is a II order equation, knowing the initial condition (position and velocity) the Cauchy problem associated is resolved for all $t$}. Looking at the phase space, the knowledge of the initial states implies the dynamics from the time our system starts $t_0$ up to infinity. So we could rephrase the classical definition of state with the following:
-\begin{definition}[State in classical mechanics according to information theory\index{Information theory}]
+Let us reflect on what does it mean. In a sense it means that if we know position and momentum/velocity of the particle at the same time, in CM we know the solution forever\sidenote{The Newton equation is a II order equation, knowing the initial condition (position and velocity) the Cauchy problem associated is resolved for all times $t$.}. Looking at the phase space, the knowledge of the initial states implies the dynamics from the time our system starts $t_0$ up to infinity. So we could rephrase the classical definition of state with the following:
+.\begin{marginfigure}
+	\includegraphics[width=1\linewidth]{images/Augustin-Louis_Cauchy_1901.jpg}
+	\caption[Cauchy around 1840. Lithography by Zéphirin Belliard after a painting by Jean Roller.]{From \href{https://it.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Wikimedia}: Cauchy around 1840. Lithography by Zéphirin Belliard after a painting by Jean Roller. Baron Augustin-Louis Cauchy FRS FRSE (21 August 1789 – 23 May 1857) was a French mathematician, engineer, and physicist who made pioneering contributions to several branches of mathematics, including mathematical analysis and continuum mechanics.}
+	\labfig{Cauchy}
+\end{marginfigure}
+\begin{definition}[State in classical mechanics according to information theory\index{Information theory}]\labdef{state-info-theory}
 A state of the system is the amount of information which is needed to predict the future dynamics of the system.
-\end{definition}\labdef{state-classical}
+\end{definition}
 But we could also look at the picture from another view point and say that if the dynamics is Hamiltonian, there is only one trajectory which passes through the point $(x_0,p_0)$. Let us suppose this to be false, it means that there could be different procedures that bring us to the same position and momentum. We could say that all the histories before $t_0$ are equivalent, in the sense that the behaviour of the system after $t_0$ does not depend on the particular history/preparation procedure. This is a good view point that we can incorporate in a quantum theory.
-
 \subsection{States in a general theory}
 \begin{definition}[pseudo definition - single particle in $\mathbb{R}^d$]
 A \textbf{state} is an \textbf{equivalence class of preparation procedures} where two procedures are considered  equivalent if they differ by \textbf{\underline{irrelevant} details.}
 \end{definition}
-\marginnote{There is a bit of tautology in this definition. We all agree that the color of the wall of the laboratory is not an essential detail as well as the color of the clothes of the experimentals, but the altitude of the laboratory? It depends on the experiment you are performing.}
+\marginnote[10mm]{There is a bit of tautology in this definition. We all agree that the color of the wall of the laboratory is not an essential detail as well as the color of the clothes of the experimentals, but the altitude of the laboratory? It depends on the experiment you are performing.}
 The trick of this definition which makes it a pseudo one is that you do not a priori what is relevant.
 \begin{kaobox}[frametitle=Remark]
 Relevance or irrelevance is decided a posteriori: details are not relevant if they do not reflect on the outcomes of the experiment.
@@ -114,9 +125,9 @@ Relevance or irrelevance is decided a posteriori: details are not relevant if th
 We have defined a state in the \textit{limbo} (i.e. an equivalent class of the preparation procedure), then we decide to associate to it some mathematical object and this will be theory dependent.
 \section[Structure of CM]{Structure of Classical Mechanics}
 \marginnote{Structure = states + observables\\ Set = "Insieme" in Italian.}
-As before, to simply, let us take just one particle
+As before, to simplify, let us take just one particle
 \[
-\textrm{State: } \quad S = \mathbb{R}^d \times \hat{\mathbb{R}} \ni \left(x,p\right)
+\textrm{State: } \quad S = \mathbb{R}^d \times \hat{\mathbb{R}}^d \ni \left(x,p\right)
 \]
 In the theory of classical mechanics the elementary propositions are represented by taking a characteristic function of a subset of our phase space\sidenote{We are using the notation of quantum mechanics even if is a classical theory to show the analogy}:
 \begin{align*}
@@ -146,7 +157,7 @@ There are many relevant elements
 \begin{enumerate}
     \item Total energy: \(H(x,p)=\frac{1}{2m}p^2+V(x)\)
     \item First component of angular mom.: \(L_1(x,p)=x_2p_3-x_3p_2\)
-    \item Every other continuous function: F(x,p)
+    \item Every other continuous function: $F(x,p)$
 \end{enumerate}
 The coupling between general observable and (\textit{miss}) states is
 \[
@@ -155,22 +166,52 @@ The coupling between general observable and (\textit{miss}) states is
 \section[Structure of QM]{Structure of Quantum Mechanics}\marginnote[10mm]{We will use this notation:
 \begin{enumerate}
     \item \textbf{Quantum mechanics}: we will intend the quantum theory of a finite number of particle, or a quantum system with finally many degrees of freedom.
-    \item \textbf{Quantum field theory}:the theory of a quantum system with infinitely many degrees of freedom.
+    \item \textbf{Quantum field theory}: the theory of a quantum system with infinitely many degrees of freedom.
     \item \textbf{Quantum theory:} everything, i.e. QM, QFT, etc...
-\end{enumerate} }
-The first part of the diagram \vreffig{Schema Phys Theory} is theory independent. Now we have to give rules to associate which associate a state to an object in our mathematical world (similarly also elementary propositions) to get numbers (expectation values).
+\end{enumerate}}
+System: We assume that it is possible to \underline{isolate} a portion of the universe from the rest of the universe (this isolated portion will be called \textit{the system}). \textbf{This is a convenient idealization and it is related to the \textit{inertial structure}}.
+
+State space: to each physical system is associated a complex and separable Hilbert space $\mathcal{H}$.
+\begin{example}[Single particle in $\mathbb{R}^d$]
+\[
+\mathcal{H}=L^2(\mathbb{R}^d,\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Lebesgue measure};}}{\dd{x}})=\frac{\left\{\psi:\mathbb{R}^d\to\mathbb{C}\,\big|\int_{\mathbb{R}^d}\abs{\psi(x)}^2\dd{x}<+\infty\right\}}{\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Equivalent relation};}}{\sim}}
+\]
+where we divided with respect to an \index{Equivalent relation}equivalent relation that identifies elements in the given set which are equivalent, i.e. an equivalent relation is\marginnote{$\mu(N)$ is a measure that induce some notion of integral. In our case is the Lebesgue measure, which defines the ordinary volume.}
+\[
+     \psi\sim\tilde{\psi}:\tilde{\psi}(x)=\psi(x)\qquad \forall x\in \mathbb{R}\setminus N ~:~\mu(N)=0
+\]
+This means that we consider two functions of the Hilbert space $\mathcal{H}$ to be the same if they are equal at least for some set of discrete points, $N$, which does not contribute in the integral as the Lebesgue measure (the common integration) of single point is equal to $0$\footnote{We will see that this implies that if the functions are continuous they are unique.}.
+\end{example}
+\begin{kaobox}[frametitle=Notation]
+Hereafter we denote the inner product\index{Inner product} in $\mathcal{H}$ by the symbol $\braket{\dots}$ (the \href{https://it.wikipedia.org/wiki/Notazione_bra-ket}{Dirac bra-ket notation}), for example in the case of the example above
+\[
+\braket{\psi}{\varphi}:=\int_{\mathbb{R}^d}\overline{\psi(x)}\varphi(x)\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Lebesgue measure};}}{\dd{\mu}_L}
+\]
+In any case, we always assume that $\braket{\dots}$ is
+\begin{enumerate}
+    \item sesquilinear, i.e. \textbf{antilinear} with respect to (w.r.t.) the first variable (as in the Physics textbook) and linear in the second one.\marginnote[-10mm]{Although in Physics, by definition $A$ is applied on the right in the Dirac's notation; Panati, probably influenced by the mathematical notation, quits this ambiguity by writing explicitly if the operator $A$ acts on the ket or on the bra:
+\[
+\left(\mathbf{v}, A\mathbf{w}\right)\equiv \bra{v}\ket{Aw} \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Dirac's notation};}}{=} \bra{v}A\ket{w}
+\]}
+\item Hermitian: $\braket{\psi}{\varphi}=\overline{\braket{\varphi}{\psi}}$
+\item Definite positive $\braket{\psi}\geq 0$
+\end{enumerate} 
+\end{kaobox}
+In the case of $\mathcal{H}=L^2(\mathbb{R}^d,\dd{x})$, from the last property we get that $\braket{\psi}=\norm{\psi}^2\geq 0 \,\to\, \norm{\psi}=0\leftrightarrow \psi = 0$, since it follows from the $\sim$ (the equivalent relation) that excludes the individual points.
+
+The first part of the diagram \vreffig{Schema Phys Theory} is theory independent. Now we have to give the rules which associate a state to an object in our mathematical world (similarly also elementary propositions) in order to get numbers (expectation values).
 \begin{definition}[\underline{State} in quantum mechanics]
 A state in QM is represented by a \textbf{ray} in a (separable, complex)\footnote{We will omit this specification further on} Hilbert space. A ray is\footnote{If the ray is the zero vector it is not normalizable and we are lost.}
 \[
-\textrm{if} \quad \psi \in \pazocal{H}, \quad \psi \neq 0
+\textrm{if} \quad \psi \in \mathcal{H}, \quad \psi \neq 0
 \]
 therefore the ray can also be seen as the span and use the following notation
 \[
-\qty[\psi] = \left\{\lambda \psi : \ \lambda\in\mathbb{C}\right \} = \left\{\omega \frac{\psi}{\norm{\psi}} : \ \omega \in U(1)\right \}
+\qty[\psi] = \left\{\lambda \psi : \ \lambda\in\mathbb{C}\right \} = \left\{\omega \frac{\psi}{\norm{\psi}} : \ \omega \in \textrm{U}(1)\right \}
 \]
-where $U(1)$ is the unit sphere: \ \( U(1) = \left\{z\in\mathbb{C} : \ \abs{z}=1\right\}\).
+where $\textrm{U}(1)$ is the unit sphere: \ \( \textrm{U}(1) = \left\{z\in\mathbb{C} : \ \abs{z}=1\right\}\).
 \end{definition}\labdef{state-in-qm}
-\begin{kaobox}[frametitle=Nota]
+\begin{kaobox}[frametitle=Remark]
 The intersection of a ray with the unite sphere happens in two circles: one around $\psi$ and the other around $-\psi$. Circles and not points because of the inner phase.
 \end{kaobox}
 \begin{marginfigure}
@@ -178,60 +219,51 @@ The intersection of a ray with the unite sphere happens in two circles: one arou
 	\caption[Schema Phys theory small]{Re-proposing of the previous scheme.}
 	\labfig{Schema_Phys_theory2}
 \end{marginfigure}
-For many applications the distinction between ray and vector makes no difference, but for this course it is important that a state in a quantum mechanical theory is represented by a ray and not by a vector, because the phase ambiguity plays a crucial role in the second part of the course. Therefore $\qty[\psi]$ is the equivalence class (the family) of all the vectors which difference from $\psi$ by a complex phase.
+For many applications the distinction between ray and vector makes no difference, but for this course it is important that a state in a quantum mechanical theory is represented by a ray and not by a vector, because the phase ambiguity plays a crucial role in the second part of the course. Therefore $\qty[\psi]$ is the equivalence class (the family) of all the vectors which differs from $\psi$ by a complex phase.
 \begin{figure}[H]
 	\includegraphics[width=1\textwidth]{images/State_QM.pdf}
 	\caption[Rep. of a state in QM]{Representation of a ray in just three directions.
 	\begin{enumerate}
-	    \item A state vector in any non zero vector.
+	    \item A state vector is any non zero vector.
 	    \item The ray is two dimensional because it is made of complex numbers.
 	\end{enumerate}}
 	\labfig{Rep-state-QM}
 \end{figure}
 Mathematicians like to give a name to this space
-\begin{definition}[Projective space]
+\begin{definition}[Projective space - Spazio proiettivo]
 \index{Projective space}: It is the space of rays in a Hilbert space
 \[
-\mathbb{P}\pazocal{H} = \left\{\psi \in \pazocal{H}: \psi \neq 0\right\}\big/ \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Equivalent relations};}}{\sim}
+\mathbb{P}\mathcal{H} = \frac{\left\{\psi \in \mathcal{H}: \psi \neq 0\right\}}{ \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Equivalent relation};}}{\sim}}
 \]
-where I divided with respect to an \index{Equivalent relation}equivalent relations that identifies points which are equivalent, i.e. an equivalent relation is\marginnote{$\mathbb{C}^*$ means $\mathbb{C}\setminus\{0\}$}
+where we divided with respect to an \index{Equivalent relation}equivalent relation that identifies points which are equivalent, i.e. an equivalent relation is\marginnote{$\mathbb{C}^\times$ means $\mathbb{C}\setminus\{0\}$}
 \[
-\psi \sim \tilde{\psi}:\  \exists\  \lambda \in \mathbb{C}^*:\ \tilde{\psi} = \lambda\psi
+\psi \sim \tilde{\psi}:\  \exists\  \lambda \in \mathbb{C}^\times:\ \tilde{\psi} = \lambda\psi
 \]
 \end{definition}
-While the elementary propositions and the coupling are represented by:\marginnote{The expectation value is a real number because it is self-adjoint}
-\begin{align*}
-    \textrm{Elementary propositions: }& \textrm{Orthogonal projections } \ E\in B(\pazocal{H})\\
-    & E^2=E=E^*
-\end{align*}
+While the elementary propositions and the coupling are represented by:\marginnote[-5mm]{The expectation value is a real number because it is self-adjoint.\\\textbf{Nota:} the professor does not use the "hat" to distinguish operators and numbers, I added them and they might be wrong.}
 \[
-    \textrm{\underline{coupling}: } \expval{E}_\qty[\psi]=\braket{\psi}{E\psi}\in\mathbb{R} \quad \quad \star
+\parbox{2 cm}{\centering Elementary\\ propositions}: \qquad \parbox{5 cm}{\centering \textrm{Orthogonal projections } $\hat{E}\in B(\mathcal{H})$
+    \\ $\hat{E}^2=\hat{E}=\hat{E}^*$}
 \]
-The difference with classical mechanics is that now the expectation values are not only $0$ and $1$, but in general it will have component in both directions/subspecies (unless $\psi$ is an eigenvector of $E$). Now the predictions have a statistical structure. So even if in a single experiment the elementary propositions can be measured only either \textit{True} or \textit{False}, the prediction of the theory is a number between $0$ and $1$, which is the expectation value on average after $N$ repetitions.
-\begin{kaobox}[frametitle=Notation]
-Hereafter we denote the inner product\index{Inner product} in $\pazocal{H}$ by the symbol $\braket{\dots}$ (the \href{https://it.wikipedia.org/wiki/Notazione_bra-ket}{Dirac bra-ket notation}), so that
+(da Cap 4 del \sidecite{picasso2015lezioni}: normalmente i matematici scrivono $E^\ast$ anziché $E^\dag$)
 \[
-\braket{\psi}{\varphi}=\overline{\braket{\psi}{\varphi}}
+    \textrm{\underline{coupling}: } \expval{E}_\qty[\psi]=\braket{\psi}{\hat{E}\psi}\in\mathbb{R} \quad \quad \star
 \]
-We always assume that $\braket{\dots}$ is \textbf{antilinear} with respect to (w.r.t.) the first variable (as in the Physics textbook).\marginnote[-10mm]{Although in Physics, by definition $A$ is applied on the right in the Dirac's notation; Panati, probably influenced by the mathematical notation, quits this ambiguity by writing explicitly if the operator $A$ acts on the ket or on the bra:
-\[
-\left(\mathbf{v}, A\mathbf{w}\right)\equiv \bra{v}\ket{Aw} \underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize Dirac's notation};}}{=} \bra{v}A\ket{w}
-\]}
+The difference with classical mechanics is that now the expectation values are not only $0$ and $1$, but in general they will have component in both directions/subspecies (unless $\psi$ is an eigenvector of $\hat{E}$). Now the predictions have a statistical structure. So even if in a single experiment the elementary propositions can be measured only either \textit{True} or \textit{False}, the prediction of the theory is a number between $0$ and $1$, which is the expectation value on average after $N$ repetitions.
 
-\end{kaobox}
-A general observable will be represented by a bounded operator $A\in B_{\textrm{\textbf{sa}}}(x)$ such that $A^*=A$ (self-adjointed). This is nothing new, it follows from the previous one. We can convice ourselfs looking at the example on the \reffig{obs-quant}
+A general observable $A$ will be represented by a bounded operator $\hat{A}\in B_{\textrm{\textbf{sa}}}(x)$ such that $\hat{A}^*=\hat{A}$ (self-adjointed). This is nothing new, it follows from the previous one. We can convice ourselfs looking at the example on the \reffig{obs-quant}
 \begin{figure}[H]
 	\includegraphics{images/strumento_misura_osservabile.pdf}
-	\caption[Apparatus to measure a quantity]{Example of a physical system (S) which produces an observable $A$ that interact with the measurement apparatus M. The latter will produce a macroscopic output that at the very end of the experiment will make the pointer point on some outcome.}
+	\caption[Apparatus to measure a quantity]{Example of a physical system (S) which produces an observable ($A$) that interact with the measurement apparatus (M). The latter will produce a macroscopic output that at the very end of the experiment will make the pointer point on some outcome.}
 	\labfig{obs-quant}
 \end{figure}
-ince our apparatus has a finite scale with finite accuracy, we will have a finite number of possible values $\alpha_i$. 
+Since our apparatus has a finite scale with finite accuracy, we will have a finite number of possible values $\alpha_i$. 
 Now consider this yes/no experiment
 \[
 \begin{split}
 \textrm{Elementary proposition: } &e_j = \textrm{"the pointer is measured in the j-th position"}\\
 &\big\updownarrow\\
-& E_j = E_j^2=E_j^\ast
+& \hat{E}_j = \hat{E}_j^2=\hat{E}_j^\ast
 \end{split}
 \]
 But this might no be enough, we must assume to have a classical measurement apparatus
@@ -246,16 +278,16 @@ But this might no be enough, we must assume to have a classical measurement appa
 \end{Bmatrix}=\delta_{jl}\hat{E}_j
 \end{align*}
 \end{assumption}
-This is enough to conclude that the expectation value of the observable $A$ can be described statistically by a self adjointed operator. In fact, we are now able to compute the mean value and the variance of an observable $A$ over a state $\psi$. Suppose we are measuring an energy:\marginnote{We demonstrate in the course of \href{https://www.overleaf.com/read/hczjjtmcwsvj}{QM (pag 50-51)} in the bachelor that \[
+This is enough to conclude that the expectation value of the observable $A$ can be described statistically by a self adjointed operator $\hat{A}$.\marginnote[-10mm]{We demonstrate in the course of \href{https://www.overleaf.com/read/hczjjtmcwsvj}{QM (pag 50-51)} in the bachelor that \[
 \ev{\hat\xi}{\psi}=\sum_{i}\xi_i\textrm{Prob}\left(\xi_i\textrm{ su }\ket{\psi}\right)
-\]}
+\]} In fact, we are now able to compute the mean value and the variance of an observable $\alpha$ over a state $\psi$. Suppose we are measuring an energy:
 \begin{align*}
-\langle A \rangle _{\psi}=\sum_{j=1}^n \alpha_j \textrm{p}(e_j \mbox{ is true})=\sum_{j=1}^n \alpha_j \langle \psi | \hat{E}_j \psi \rangle=\langle \psi | \underbrace{\left(\sum_{j=1}^n \alpha_j \hat{E}_j\right)}_{\textrm{We call this operator } A}\psi \rangle 
+\langle A \rangle _{[\psi]}=\sum_{j=1}^n \alpha_j \textrm{p}(e_j \mbox{ is true})=\sum_{j=1}^n \alpha_j \bra{\psi}\hat{E}_j\ket{\psi}=\bra{\psi}\underbrace{\left(\sum_{j=1}^n \alpha_j \hat{E}_j\right)}_{\textrm{\parbox{1.8cm}{\centering We call this operator $\hat{A}$}}}\ket{\psi} 
 \end{align*}
-\marginnote{Recall of the course of QM
+\marginnote[-35mm]{Recall of the course of QM
 \begin{postulato}\labpost{operatore_osservabile}
 \textbf{Operatore $\hat{\xi}$ associato a un osservabile $\xi$}\index{Operatore}\footnote{Questo postulato è indicato come \href{https://it.wikipedia.org/wiki/Postulati_della_meccanica_quantistica\#Le_osservabili}{Le osservabili} su Wikipedia.}\\
-Scelta una base ortonormale di autovettori $\ket{\xi_i}$ dell'osservabile $\xi$, si associa un operatore $\hat{\xi}$ autoaggiunto su $\pazocal{H}$ definendolo sui vettori di questa base come:
+Scelta una base ortonormale di autovettori $\ket{\xi_i}$ dell'osservabile $\xi$, si associa un operatore $\hat{\xi}$ autoaggiunto su $\mathcal{H}$ definendolo sui vettori di questa base come:
 \[
 \hat{\xi}\ket{\xi_i^{\left(\alpha\right)}}\overset{\textrm{def}}{=}\xi_i\ket{\xi_i^{\left(\alpha\right)}}
 \]
@@ -270,37 +302,39 @@ Possiamo quindi estendere questa definizione su uno stato generico $\ket{A}$ per
 \]
 }We notice that, since $\alpha_j$ is real:
 \begin{align*}
-    A\overset{\textrm{def}}{=}\sum_{j=1}^n \alpha_j E_j=\sum_{j=1}^n \alpha_j E_j^*=\left(\sum_{j=1}^n \alpha_j E_j\right)^*=A^*
+    \hat{A}\overset{\textrm{def}}{=}\sum_{j=1}^n \alpha_j \hat{E}_j=\sum_{j=1}^n \alpha_j \hat{E}_j^*=\left(\sum_{j=1}^n \alpha_j \hat{E}_j\right)^*=\hat{A}^*
 \end{align*}
 Up to this point, we did not use the \refass{class-meas-app}. To define the variance instead:
 \begin{align*}
-    \textrm{Var}(A)_{\psi}
-    &=\sum_{j=1}^n\left(\alpha_j-\langle A \rangle_{\psi}\right)^2p(e_j \mbox{ is true})=\\
-    &=\sum_{j=1}^n\alpha_j^2\langle \psi|E_j \psi \rangle - \langle A \rangle_{\psi}^2=\\
-    &=\langle \psi|\sum_{j=1}^n\alpha_j^2E_j \psi \rangle - \langle A \rangle_{\psi}^2=\\
-    &=\langle \psi|B \psi \rangle - \langle \psi|A \psi \rangle^2
+    \textrm{Var}(A)_{[\psi]}
+    &=\sum_{j=1}^n\left(\alpha_j-\langle A \rangle_{[\psi]}\right)^2p(e_j \mbox{ is true})=\\
+    &=\sum_{j=1}^n\alpha_j^2p(e_j \mbox{ is true})+\langle A \rangle_{[\psi]}^2\underbrace{\sum_{j=1}^n p(e_j \mbox{ is true})}_{=\,1}-2\langle A \rangle_{[\psi]}\underbrace{\sum_{j=1}^n\alpha_jp(e_j \mbox{ is true})}_{= \,\langle A \rangle_{[\psi]}}=\\
+    &=\sum_{j=1}^n\alpha_j^2\langle \psi|\hat{E}_j \psi \rangle - \langle A \rangle_{[\psi]}^2=\\
+    &=\langle \psi|\sum_{j=1}^n\alpha_j^2\hat{E}_j \psi \rangle - \langle A \rangle_{[\psi]}^2=\\
+    &=\langle \psi|\hat{B} \psi \rangle - \langle \psi|\hat{A} \psi \rangle^2
 \end{align*}
-But we notice that, with the assumption \refass{class-meas-app}, we can express $A^2$ as:
+But we notice that, with the assumption \refass{class-meas-app}, we can express $\hat{A}^2$ as:
 \begin{align*}
-    A^2
-    =\left(\sum_{j=1}^n \alpha_j E_j \right)\left(\sum_{k=1}^n \alpha_k E_k \right)
-    =\sum_{j,k=1}^n\alpha_j\alpha_k {\color{red} E_jE_k}\overset{\mathclap{\tikz \node {↓} node [above=1ex] {\footnotesize \color{red} $E_jE_k=\delta_{jk}E_j$};}}{=}
-    \sum_{j,k=1}^n\alpha_j\alpha_k\delta_{jk}E_k
-    =\sum_{j=1}^n\alpha_j^2 E_j
-    =B
+    \hat{A}^2
+    =\left(\sum_{j=1}^n \alpha_j \hat{E}_j \right)\left(\sum_{k=1}^n \alpha_k \hat{E}_k \right)
+    =\sum_{j,k=1}^n\alpha_j\alpha_k {\color{red} \hat{E}_j\hat{E}_k}\overset{\mathclap{\tikz \node {↓} node [above=1ex] {\footnotesize \color{red} $\hat{E}_j\hat{E}_k=\delta_{jk}\hat{E}_j$};}}{=}
+    \sum_{j,k=1}^n\alpha_j\alpha_k\delta_{jk}\hat{E}_k
+    =\sum_{j=1}^n\alpha_j^2 \hat{E}_j
+    =\hat{B}
 \end{align*}
 Therefore we found the usual rule of Quantum Mechanics
 \[
-\textrm{Var}(A)_\psi= \langle \psi|A^2 \psi \rangle - \langle \psi|A \psi \rangle^2
+\textrm{Var}(A)_{[\psi]}= \langle \psi|\hat{A}^2 \psi \rangle - \langle \psi|\hat{A} \psi \rangle^2
 \]
-It would have been very inconvenient if we had to add another operator to describe the variance and then other operators to describe the higher order moments of the statistical distribution. The \refass{class-meas-app} allows us to use the same operator, instead of defining the operator $B=\sum_{j=1}^n\alpha_j^2E_j$ for the variance. We will not demonstrate that other powers of the operator $A$ would be sufficient for the other momenta.
-\section[Transformation in CM]{Transformation in classical mechanics (CM)}
+It would have been very inconvenient if we had to add another operator to describe the variance and then other operators to describe the higher order moments of the statistical distribution. The \refass{class-meas-app} allows us to use the same operator, instead of defining the operator $\hat{B}=\sum_{j=1}^n\alpha_j^2\hat{E}_j$ for the variance. We will not demonstrate that other powers of the operator $\hat{A}$ would be sufficient for the other momenta.
+\section[Transformation in CM]{Transformation in classical mechanics (CM)}\labsec{tr-CM}
 Let's suppose to have a simple particle in $\mathbb{R}^d$, we already discussed the state $(x,v)\in S=\mathbb{R}^d\times \hat{\mathbb{R}}^d$. Suppose that in the laboratory there is concrete linear physical transformation $T: \mathbb{R}^d\to\mathbb{R}^d$. From this one we have to define the two related object:\marginnote{If we used the momentum $p$ instead of the velocity we should have use the transposed of $T$ for the transformation.}
 %39:00
 \begin{align*}
-\hat{T}: S \rightarrow S \, \mbox{ such that } \, \hat{T}(x,v)=(Tx,Tv)
+\hat{T}:\; &S \rightarrow S \ \mbox{ such that } \, \hat{T}(x,v)=(Tx,Tv)\\
+\tilde{T}:\; &A_{\textrm{cl}} \to A \ \textrm{ such that } \ \tilde{T}(F) = \textrm{ ??}
 \end{align*}
-and $\tilde{T}(F)$ with $\tilde{T}:A \rightarrow A$, where $A_{\textrm{cl}}=C(\mathbb{R}^d\times\hat{\mathbb{R}}^d)$. By the principle of \textbf{homogeneity} and \textbf{isotropy} of space (\vrefass{Principle-of-homogeneity}) , we know that $\forall \ F \in A_{\textrm{cl}} \quad \forall \ s \in S$ \marginnote{$\langle \tilde{T}(F) \rangle_{\hat{T}(S)}$ means the expectation value of the rotate observable in the rotated state.}
+where $A_{\textrm{cl}}=C(\mathbb{R}^d\times\hat{\mathbb{R}}^d)$. By the principle of \textbf{homogeneity} and \textbf{isotropy} of space (\vrefass{Principle-of-homogeneity}) , we know that $\forall \ F \in A_{\textrm{cl}}$ and $\forall \ s \in S$ \marginnote{$\langle \tilde{T}(F) \rangle_{\hat{T}(S)}$ means the expectation value of the rotate observable in the rotated state.}
 \[
 \star \quad \langle \tilde{T}(F) \rangle_{\hat{T}(S)}=\langle F \rangle_S \ \Rightarrow \ \tilde{T}(F)(Tx,Tv)=F(x,v) \quad \forall (x,v)\in S
 \]
@@ -308,17 +342,18 @@ therefore, by a change of variable, we obtain $$\tilde{T}(F)(x,v)=F(T^{-1}x,T^{-
 \begin{kaobox}[frametitle=Moral]
 The form of $\tilde{T}:A_{\textrm{cl}} \xrightarrow[]{} A_{\textrm{cl}}$ \, is prescribed once we give the transformation of the state $\hat{T}:S \rightarrow S$ and assume the \refass{Principle-of-homogeneity}\footnote{In the last chapter it will be the principle of relativity.}.
 \end{kaobox}
-\section[Transformation in QM]{Transformation in quantum mechanics (QM)}\marginnote{This part is treated in detail in Chapter ???.}
-Let's suppose to have a simple particle in $\mathbb{R}^d$, an Hilbert space $\pazocal{H}=L^2(\mathbb{R}^d,dx)$, where $L^2$ denotes the class of square integrable functions\sidenote{The \href{https://it.wikipedia.org/wiki/Funzione_a_quadrato_sommabile}{square integrable functions} are functions $\psi:\mathbb{R}^d\rightarrow\mathbb{C}$ such that \[\int_{\mathbb{R}^d}\abs{\psi}^2dx< +\infty\]The vector space of square integrable functions (with respect to Lebesgue measure) forms the $L^p$ space with $p = 2$. Among the $L^p$ spaces, the class of square integrable functions is unique in being compatible with an inner product, which allows notions like angle and orthogonality to be defined. Along with this inner product, the square integrable functions form a Hilbert space, since all of the $L^p$ spaces are complete under their respective p-norms.}, and the state space $S=\mathbb{P}(\pazocal{H})$ is a set of \textbf{rays in the Hilbert space} $\pazocal{H}$. To our concrete transformation $T$, we should associate $\hat{T}:S \rightarrow S$ such that it preserves the structure of our projective space. Spoiler: the Wigner's theorem states that every automorphism of the state space $S=\mathbb{P}(\pazocal{H})$, i.e. every transformation of $S$ which preserves the structure of $S$, is generated either by a \textbf{unitary} \underline{\underline{or}} \textbf{anti-unitary} operator, by setting
+\section[Transformation in QM]{Transformation in quantum mechanics (QM)\footnote{This part is treated in detail in \refch{GT-QM}.}}
+Let's suppose to have a simple particle in $\mathbb{R}^d$, an Hilbert space $\mathcal{H}=L^2(\mathbb{R}^d,dx)$, where $L^2$ denotes the class of square integrable functions\sidenote{The \href{https://it.wikipedia.org/wiki/Funzione_a_quadrato_sommabile}{square integrable functions} are functions $\psi:\mathbb{R}^d\rightarrow\mathbb{C}$ such that \[\int_{\mathbb{R}^d}\abs{\psi}^2dx< +\infty\]The vector space of square integrable functions (with respect to Lebesgue measure) forms the $L^p$ space with $p = 2$. Among the $L^p$ spaces, the class of square integrable functions is unique in being compatible with an inner product, which allows notions like angle and orthogonality to be defined. Along with this inner product, the square integrable functions form a Hilbert space, since all of the $L^p$ spaces are complete under their respective p-norms.}, and the state space $S=\mathbb{P}(\mathcal{H})$ is a set of \textbf{rays in the Hilbert space} $\mathcal{H}$. To our concrete transformation $T$, we should associate $\hat{T}:S \rightarrow S$ such that it preserves the structure of our projective space. Spoiler: the \href{https://en.wikipedia.org/wiki/Eugene_Wigner}{Wigner}'s theorem (\refthm{Wigner}) states that every automorphism of the state space $S=\mathbb{P}(\mathcal{H})$, i.e. every transformation of $S$ which preserves the structure of $S$, is generated either by a \textbf{unitary} \underline{\underline{or}} \textbf{anti-unitary} operator, by setting
 \[
 \hat{T}\qty[\psi]=\qty[U\psi]
 \]
 (if $\psi\neq 0$ also $U\psi\neq 0$) so it gives a ray.
 \begin{definition}[Unitary operator]\index{Unitary operator}
-A unitary operator $U:\pazocal{H}\rightarrow\pazocal{H}$ is a linear operator such that
+A unitary operator on $\mathcal{H}$ is a map $U:\mathcal{H}\rightarrow\mathcal{H}$ such that
     \begin{enumerate}
-        \item preserves the inner product: $\langle U\psi|U\varphi \rangle=\langle \psi|\varphi \rangle \quad \forall\ \psi,\varphi \in \pazocal{H}$
-        \item it is \textbf{surjective}\footnote{In finite dimension this condition is automatic.}:  $\textrm{Ran}U=\pazocal{H}$
+    \item is linear (therefore it is a linear operator);
+    \item is isometric, i.e. it preserves the inner product: $\langle U\psi|U\varphi \rangle=\langle \psi|\varphi \rangle \quad \forall\ \psi,\varphi \in \mathcal{H}$
+        \item \marginnote[-10mm]{In mathematics, the \textbf{Ran space} (or \textbf{Ran's space}) of a topological space $X$ is a topological space $\textrm{Ran}(X)$ whose underlying set is the set of all nonempty finite subsets of $X$: for a metric space $X$ the topology is induced by the Hausdorff distance. The notion is named after Ziv Ran.}it is \textbf{surjective}\footnote{In finite dimension this condition is automatic.}:  $\textrm{Ran}U=\mathcal{H}$
     \end{enumerate}
 \end{definition}
 \begin{kaobox}[frametitle=Remarks]
@@ -346,56 +381,191 @@ From \cite{abate2006geometria} page 100 \\
 \end{enumerate}
 \end{proof}
 }:
-$$\mbox{ker }U=\begin{Bmatrix}\psi\in\pazocal{H}:U\psi=0\end{Bmatrix}=\begin{Bmatrix}\psi\in\pazocal{H}:||\psi||=0\end{Bmatrix}=\begin{Bmatrix} O\end{Bmatrix}$$
-If $\pazocal{H}\cong\mathbb{C}^N$, it happens $U:\mathbb{C}^N\xrightarrow[]{}\mathbb{C}^N$ then, for a linear map, \textbf{injectivity} \underline{implies} \textbf{surjectivity} in finite dimensions.
+$$\mbox{ker }U=\begin{Bmatrix}\psi\in\mathcal{H}:U\psi=0\end{Bmatrix}=\begin{Bmatrix}\psi\in\mathcal{H}:||\psi||=0\end{Bmatrix}=\begin{Bmatrix} O\end{Bmatrix}$$
+If $\mathcal{H}\cong\mathbb{C}^N$ with $N<+\infty$, it happens $U:\mathbb{C}^N\xrightarrow[]{}\mathbb{C}^N$ then, for a linear map, \textbf{injectivity} \underline{implies} \textbf{surjectivity} in finite dimensions.
 \end{kaobox}
-\begin{definition}[\textbf{Anti}-unitary operator]\index{Anti-unitary operator}
-An anti-unitary operator\\ $T:\pazocal{H}\xrightarrow[]{}\pazocal{H}$ is an \textbf{anti}-linear operator, i.e.
-        \(
-        \forall \ \lambda \in \mathbb{C} \quad T(\lambda\psi)=\Bar{\lambda}T(\psi)
-        \), with $\Bar{\lambda}$ the complex conjugate of $\lambda$, such that:
-    \begin{enumerate}
-        \item 
-        \[\langle T\varphi|T\psi \rangle=\overline{\langle \varphi|\psi \rangle}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize by hermitianity of the inn. prod.};}}{=}\langle \psi|\varphi \rangle\]
-        \item It is surjective
-    \end{enumerate}
+\begin{example}[Non-surjective isometry: the unilateral shift]
+Let us consider the following Hilbert space
+\[
+\mathcal{H}=l^2(\mathbb{N})=\left\{\alpha:\mathbb{N}\to\mathbb{C}:\sum_{n=0}^\infty\abs{\alpha_n}^2<+\infty\right\}
+\]
+Let us now see if the following map $S$ is surjective, i.e. $\textrm{Im}(S)\subsetneq\mathcal{H}$
+\[
+\left(S\alpha\right)=(0,\alpha_0,\alpha_1,\alpha_2,\dots) \qquad \textrm{Unilateral shift}
+\]
+\[
+\norm{S\alpha}^2=\sum_{n\in\mathbb{N}}\abs{\alpha_n}^2=\norm{\alpha}^2 \quad \textrm{Im}(S)=\left\{\left(0,\beta_1,\beta_2,\dots\right)\right\}\subsetneq\mathcal{H}
+\]
+\end{example}
+\begin{example}
+Let us consider the following Hilbert space $\mathcal{H}=L^2(\mathbb{R}^d,\dd{x})$, where $\dd{x}$ is the Lebesgue measure. Now let us consider the following operator
+\[
+\left(T_a\psi\right)(x)=\psi(x-a)\qquad \forall\;a\in\mathbb{R}^d
+\]
+This is a unitary operator thanks to the fact that the volume of the Lebesgue measure is invariant by translation
+\[
+\braket{T_a\psi}{T_a\varphi}=\int_{\mathbb{R}^d}\overline{\psi(x-a)}\varphi(x-a)\dd{x}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $\tilde{x}=x-a\quad \dd\tilde{x}=\dd{x}$};}}{=}\int_{\mathbb{R}^d}\overline{\psi(\tilde{x})}\varphi(\tilde{x})\dd{\tilde{x}}=\braket{\psi}{\varphi}
+\]
+as the Lebesgue measure in translation invariant.
+
+We will see that we can do the same with rotations: $\forall\; R\in\textrm{SO}(3)$ (a rotation in $\mathbb{R}^3$\marginnote{Why $R^{-1}$? We have to imagine that to rotate the graph, we need to rotate the points in the opposite direction. It is like the translation, where if we want to displace our point of a quantity $x_0$, we do $x\to x-x_0$}
+\[
+\left(U_R\psi\right)(x)=\psi(R^{-1}x)
+\]
+And this is unitary
+\[
+\braket{U_R\psi}{U_R\varphi}=\int_{\mathbb{R}^3}\overline{\psi(R^{-1}x)}\varphi(R^{-1}x)\dd{x}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $\tilde{x}=R^{-1}x\quad \dd\tilde{x}=\dd{x}$};}}{=}\int_{\mathbb{R}^3}\overline{\psi(\tilde{x})}\varphi(\tilde{x})\dd{\tilde{x}}=\braket{\psi}{\varphi}
+\]
+\end{example}
+\begin{definition}[Anti-unitary operator]\index{Anti-unitary operator}
+An anti-unitary operator is a map $\Theta:\mathcal{H}\xrightarrow[]{}\mathcal{H}$ which is:
+\begin{enumerate}
+    \item \textbf{anti-linear:}\marginnote{This is linear over the real numbers. With $\overline{\lambda}$ we indicate the complex conjugate} $\Theta(\lambda\psi)=\overline{\lambda}\Theta(\psi) \quad \forall \ \lambda \in \mathbb{C}$
+    \item It is anti-isometric: $\langle\Theta\psi|\Theta\varphi\rangle=\overline{\langle\psi|\varphi\rangle}\overset{\mathclap{\tikz \node {$\downarrow$} node [above=1.25ex] {\footnotesize by hermitianity of the inn. prod.};}}{=}\langle\varphi|\psi\rangle$, in particular, it implies that the norm is preserved $\Rightarrow\lVert\Theta\psi\rVert=\lVert\psi\rVert$, hence it is \textbf{injective}
+    \item It is \textbf{surjective} \marginnote{3) is a consequence of the two above if the Hilbert space is finite dimensional}
+\end{enumerate}
 \end{definition}
+\begin{marginfigure}[+20mm]
+	\includegraphics[width=1\linewidth]{images/Heisenberg,W._Wigner,E._1928.jpg}
+	\caption[Werner Heisenberg and Eugene Wigner (1928).]{From \href{https://commons.wikimedia.org/wiki/File:Heisenberg,W._Wigner,E._1928.jpg}{Wikimedia}: Eugene Paul "E. P." Wigner (November 17, 1902 – January 1, 1995) was a Hungarian theoretical physicist who also contributed to mathematical physics. He obtained American citizenship in 1937, and received the Nobel Prize in Physics in 1963 "for his contributions to the theory of the atomic nucleus and the elementary particles, particularly through the discovery and application of fundamental symmetry principles". Wigner and Hermann Weyl were responsible for introducing group theory into physics, particularly the theory of symmetry in physics. Along the way he performed ground-breaking work in pure mathematics, in which he authored a number of mathematical theorems. In particular, Wigner's theorem is a cornerstone in the mathematical formulation of quantum mechanics. Wigner participated in a meeting with Leo Szilard and Albert Einstein that resulted in the Einstein-Szilard letter, which prompted President Franklin D. Roosevelt to initiate the Manhattan Project to develop atomic bombs. Wigner was afraid that the German nuclear weapon project would develop an atomic bomb first. In later life, he became more philosophical, and published The Unreasonable Effectiveness of Mathematics in the Natural Sciences, his best-known work outside technical mathematics and physics. Wigner died of pneumonia at the University Medical Center in Princeton, New Jersey on 1 January 1995.}
+	\labfig{Wigner}
+\end{marginfigure}
 \begin{example}
 Spinless particle in $\mathbb{R}^d$.\\
-In this case the Hilbert space is $\pazocal{H}=L^2(\mathbb{R}^d,dx)$ and there is privileged anti-unitary operator: 
+In this case the Hilbert space is $\mathcal{H}=L^2(\mathbb{R}^d,dx)$ and there is a privileged anti-unitary operator: 
 \[
 \begin{split}
-\mbox{complex conjugation }\  C:L^2(\mathbb{R}^d)&\xrightarrow[]{}L^2(\mathbb{R}^d)\\
+C:L^2(\mathbb{R}^d)&\xrightarrow[]{}L^2(\mathbb{R}^d)\\
 \psi &\mapsto \Bar{\psi}
 \end{split}
 \]
-$C$ is \textbf{antiunitry} and $C^2=+\mathbb{1}.$
+\[
+(C\psi)(x)=\overline{\psi(x)} \quad (\textrm{complex conjugation})
+\]
+$C$ is \textbf{antiunitry} and $C^2=+\mathbb{1}$. Complex conjugation is an example which represents the time-reversal symmetry in a spinless one particle system.
 \end{example}
 %01:01:00
-\begin{example}
+Notice that an abstract Hilbert space has no complex conjugation because it might depend on the basis, if we introduce an ortho-normal basis and take the complex conjugate of all the components it is okay but if we change basis we will have something else. In order to have a complex conjugation we need an additional structure, for example we need to know that the Hilbert space is a space of functions.
+\begin{example}\labexample{time-rev}
 Spin 1/2 particle in $\mathbb{R}^d$\\
-In this case the Hilbert space is \[\pazocal{H}=L^2(\underbrace{\mathbb{R}^d,\mathbb{C}^2}_\text{\parbox{1.5cm}{\centering$\mathbb{C}^2$-valued\\[-4pt]  wave funct.s}})=L^2(\mathbb{R}^d)\otimes \mathbb{C}^2\]
+In this case the Hilbert space is \[\mathcal{H}=L^2(\underbrace{\mathbb{R}^d,\mathbb{C}^2}_\text{\parbox{1.5cm}{\centering$\mathbb{C}^2$-valued\\[-4pt]  wave funct.s}})=L^2(\mathbb{R}^d)\otimes \mathbb{C}^2\]
 An anti-unitary operator is the
 \[
-\mbox{Time-reversal operator}\ \Theta=C \otimes M
+\mbox{Time-reversal operator}\ \Theta=C \otimes M=Ce^{-i\pi S_y/\hslash}
 \]
 where $C$ is the complex conjugation and $M$ the exponential of a Pauli matrix: $M=e^{-i\pi S_y/\hslash}$, with $(S_x,S_y,S_z)$ spin operators.
 \end{example}
+\subsection{Action on the state space}
+First we have to consider the action of transformations, or symmetries, on the states space. Recall that in QM, the space of \textbf{pure states}\index{Pure states} is the projective space of a complex Hilbert space:
+\[
+S=\mathbb{P}\mathcal{H}=\left\{[\psi]:[\psi] \text{ is a ray in } \mathcal{H}\right\}
+\]
+The important point is that a state in QM is \textbf{not} represented by a non-zero vector in the Hilbert space but properly speaking it is represented by a ray in the Hilbert space, so two vectors which differ by a phase (e.g. $\psi$ and $-\psi$, $\psi$ and $e^{i\theta}\psi$) correspond to the same state. For many applications this is irrelevant, for example if we want to compute eigenstates and eigenvectors we assume that a state is a vector and everything is fine, but if we deal with symmetry and group theory this is \textbf{crucial}. Given a transformation $T$ in physical space, we represent it as a \textbf{transformation of (pure) states $\hat{T}$}:
+\begin{align*}
+    \hat{T}:S&\xrightarrow[]{}S\\
+    [\psi]&\mapsto\hat{T}[\psi]
+\end{align*}
+It is natural to require that it preserves all the relevant structures of $S$, so it is an automorphism of $S=\mathbb{P}\mathcal{H}$. A natural question arises: in what sense it is an automorphism? $S$ is the projective space of a complex Hilbert space, when we talk about automorphisms of the state space we should decide which structure is relevant to physics:
+\begin{itemize}
+    \item set$\;\xrightarrow[]{}\;$bijection
+    \item manifold $\xrightarrow[]{}$ diffeomorphism
+    \item $\dots$
+\end{itemize}
+What is the relevant structure? A geometer would say that it is the one of the projective space, so given two rays we can compute the pseudo-angle between the two rays. We cannot use the angle, because it depends on the representative: if we take $\psi$ and $\varphi$ we obtain an angle but if we tale $\psi$ and $-\varphi$ we get another angle. The angle itself is not well defined and we can use the pseudo-angle. But we are not geometers, we are physicists so we want the physics to tell us which is the relevant structure.
+
+\raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{images/lamp.png}}} \underline{\textbf{Idea:}} traces back to \href{https://en.wikipedia.org/wiki/Eugene_Wigner}{Wigner} (1959). Experimentally, we can measure and control \textbf{transition probabilities}\index{Transition probabilities}\marginnote{So the physics tells us that this is something relevant}: let us represent the pure states by the rank-1 orthogonal projectors \[
+P_{\psi}=|\psi\rangle\langle\psi|\qquad P_{\phi}=|\phi\rangle\langle\phi|
+\]
+The transition probability is defined as:
+\[
+\text{Prob}([\phi],[\psi]):=\Tr(P_{\psi}P_{\phi})={\color{red}|\langle\psi|\phi\rangle|^2}
+\]
+The relevant physical information is not the inner product, but its modulus $\Rightarrow$ \underline{\textbf{Moral:}} {\color{red}$|\langle\psi|\phi\rangle|$ should be preserved!}. The physicists' and geometers' viewpoints agree.
+
+\underline{\textbf{Hp:}} $\mathcal{H}$ is a complex, separable Hilbert space (with finite or infinite dimension).
+\begin{definition}[Projective automorphism]\index{Projective automorphism}
+A projective automorphism of $\mathbb{P}\mathcal{H}$ is a map $\hat{T}:\mathbb{P}\mathcal{H}\xrightarrow[]{}\mathbb{P}\mathcal{H}$ which:
+\begin{enumerate}
+    \item is bijective
+    \item preserves the \textbf{pseudo-angle}\index{Pseudo-angle}:
+    \[
+    P([\psi],[\varphi]):=\frac{|\langle\psi|\varphi\rangle|}{\lVert\psi\rVert\lVert\varphi\rVert}
+    \]
+    In the sense that $P(\hat{T}[\psi],\hat{T}[\varphi])=P([\psi],[\varphi]) \ \forall\;\varphi,\psi\neq 0$. The \textbf{modulus} gives independence on the representative.
+\end{enumerate}
+\end{definition}
+Suppose to have:
+\[
+\begin{cases}[\psi]=[e^{i\eta}\psi]\\
+[\varphi]=[e^{i\theta}\varphi]
+\end{cases}\xrightarrow[]{}|\langle e^{i\eta}\psi|e^{i\theta}\varphi\rangle|=|\langle\psi|\varphi\rangle|
+\]
+{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}Two vectors define the \textbf{same ray!} The main point is that the \textbf{pseudo-angle} is independent on the \textbf{representative vector}.
+\begin{example}
+Projective automorphisms induced by \textbf{unitary operators:\marginnote{This is a very large source of projective automorphisms.}} let $U\in\pazocal{U}(\mathcal{H})$, then we can define $\hat{T}_U:\mathbb{P}\mathcal{H}\xrightarrow[]{}\mathbb{P}\mathcal{H}$ as \[
+{\color{red}\hat{T}_U[\psi]=[U\psi]}
+\]this is a projective automorphism. The unitary operator preserves the inner product therefore it preserves the pseudo-angle. 
+\end{example}
+For the next example, we will use instead \textbf{anti-unitary operator}.
+\begin{example}Projective automorphisms induced by \textbf{anti-unitary operators:}
+let $\Theta$ be an anti-unitary operator, then we can define \[
+{\color{red}\hat{T}_{\Theta}[\psi]:=[\Theta\psi]}
+\]which is a \textbf{projective automorphism}. In fact,
+\[
+P(\hat{T}_{\Theta}[\psi],\hat{T}_{\Theta}[\varphi])=\frac{\abs{\braket{\Theta\psi}{\Theta\varphi}}}{\norm{\Theta\psi}\norm{\Theta\varphi}}=\frac{\abs{\overline{\braket{\psi}{\varphi}}}}{\norm{\psi}\norm{\varphi}}
+\]
+\end{example}
+
+We have two families of examples which allow us to generate projective automorphisms by using either unitary or anti-unitary operator. The good news is that these two families represent all the possible ways in which we can generate projective automorphisms.\marginnote{We are considering $\mathcal{H}$ a complex separable Hilbert space, arbitrary dimension}
+\begin{theorem}[Wigner]\index{Wigner}
+\labthm{Wigner}
+Every \textbf{projective automorphism} in $\mathcal{H}$ is either induced by a \textbf{unitary operator} or by an \textbf{anti-unitary operator}. (\textit{No other cases)}
+\end{theorem}
+The inducing unitary or anti-unitary operator is \textbf{unique up to a phase}, i.e.
+\[
+\hat{T}_U=\hat{T}_{\eta U} \quad \textrm{for }\eta\in\textrm{U}(1)
+\]
+Indeed,
+\[
+\hat{T}_{\eta U}[\psi]=[\eta U \psi]=[U \psi]=T_{U}[\psi] \quad \forall\;\psi \in \mathcal{H}\backslash  \{0\}
+\]
+In the practice, we will encounter very very often unitary operators and not so often anti-unitary operators, but there is a case in which by fundamental reasons\marginnote{Fundamental reasons that we have no time to explain} we need anti-unitary operators: \textbf{time reversal symmetry} of \refexample{time-rev}.
+
+We did not decide a-priori which structure of the state space should be preserved but we let experiments tell us what is the relevant structure. If we had been able to measure and control the inner product of states without the modulus, we could have defined automorphisms in a stronger sense, requiring them to preserve the real angle and not only the pseudo-angle. But this is not possible, since as far as we know we can control transition probabilities but not the true angle, therefore this is the good physical relevant notion of automorphisms.
+\subsubsection{Digression on fundamental QFT}
+This is an extra and it will be not asked in the exam. In the space of classical fields we would like to have the analogous of the Lebesgue measure, but on the space of classicl field ($\phi^4$, YM theories, ...) it does not exixst eny measure which is:
+\begin{enumerate}
+    \item finite on compact sets;
+    \item tralsation invariant.
+\end{enumerate}
 \section{Symmetry}\labsec{Symmetry}
 \begin{kaobox}[frametitle=Terminology $\star$]
-A \textbf{symmetry}\index{Symmetry} of a physical system is a transformation which leaves invariant the \textbf{generator of the dynamics}, i.e. the Hamiltonian (a function in CM, an operator in QM). For $\pazocal{H}\in A$, the transformation $\Tilde{T}(\pazocal{H})=\pazocal{H}$ is a symmetry of the system.
+A \textbf{symmetry}\index{Symmetry} of a physical system is a transformation which leaves invariant the \textbf{generator of the dynamics}, i.e. the Hamiltonian (a function in CM, an operator in QM). For $H\in A$, the transformation $\Tilde{T}(H)=H$ is a symmetry of the system.
 \end{kaobox}
-We can do many transformations to our system, but it is not obvious that this will leave invariant the Hamiltonian.\sidenote{Rotating an ammonium molecule will not change anything, but squishing it do change the physics.} Not every transformation leaves invariant the dynamics. Sometimes we will call symmetries any transformation, but we will be wise enough to understand what it means by the context.
+We can do many transformations to our system, but it is not obvious that this will leave invariant the Hamiltonian.\footnote{Rotating an ammonium molecule will not change anything, but squishing it do change the physics.} Not every transformation leaves invariant the dynamics. Sometimes we will call symmetries any transformation, but we will be wise enough to understand what it means by the context.\marginnote[-60mm]{Da \cite{picasso2015lezioni}: Se le forze sono indipendenti dal tempo, cioè se vale
+\[
+U(t_1)U(t_2)=U(t_2)U(t_1)=U(t_1+t_2)
+\]
+si può dimostrare (teorema di Stone) che 
+\[
+U(t)=e^{-iKt}
+\]
+Naturalmente $U(t)$, e quindi $K$, dipendono dal tipo di forze che agiscono sul sitema; $K$ in particolare è un'osservabile che riassume in sé la dinamica del sistema: l'analogia con l'operatore di traslazione spaziale ci suggerisce di postulare che $K$ sia proporzionale alla hamiltoniana $H$ del sistema. Infatti dalla teoria (classica) delle trasformazioni canoniche sappiamo che, così come l'impulso $p$ è il generatore delle traslazione spaziali, $H$ è il generatore delle traslazioni temporali. La costante di proporzionalità deve avere le dimensioni del reciproco di un'azione, per cui porremo:
+\[
+K=\hslash^{-1}H \quad \Rightarrow \quad U(t)=e^{-iHt/\hslash}
+\]
+e la scelta del segno della costante di proporzionalità fra $H$ e $K$ sarà giustificata dall'esigenza che, in opportune condizioni, la meccanica quantistica riproduca i risultati della meccanica classica.
+}
 \begin{kaobox}[frametitle=Remark]
 We are considering here a \textbf{non-Lorentz-invariant} (or covariant) approach, as we are assuming the existence of a distinguished \textbf{time axis}, so that the dynamics in QM is given by
 \[
 U(t) = e^{-i\frac{t}{\hslash}H} \quad \quad \left(t\in\mathbb{R}\right)
 \]
-with $\pazocal{H}$ the Hamiltonian operator.
+with $H$ the Hamiltonian operator.
 \end{kaobox}
 In the last chapter (Ch. 7) we will consider \textbf{relativistic theories} and we will adapt our approach accordingly. Equation (Symm) will be replaced by the \textbf{invariant of the action functional $S\qty{\phi}$}, where $\phi$ denote the relativistic field(s).
 \section{Exercises}
-There are no suggested exercises for this chapter, Just review the related concept from Geometry 1 and \href{https://www.overleaf.com/read/hczjjtmcwsvj}{Quantum Mechanics}.
+There are no suggested exercises for this chapter, just review the related concept from Geometry 1 and \href{https://www.overleaf.com/read/hczjjtmcwsvj}{Quantum Mechanics}.
 \newpage
 \vspace*{\fill} 
 \begin{quote} 

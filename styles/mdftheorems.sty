@@ -72,8 +72,8 @@
 	%spacebelow=.5\thm@postskip,
 	%headfont=\normalfont\bfseries,%\scshape,
 	%notefont=\normalfont, notebraces={ (}{)},
-	bodyfont=\normalfont\itshape,
-	%headformat={\NAME\space\NUMBER\space\NOTE},
+	bodyfont=\normalfont,
+	headformat={\NAME\space\NUMBER\space\NOTE},
 	headpunct={},
 	postheadspace={.5em plus .1em minus .1em},
 	%prefoothook={\hfill\qedsymbol}
@@ -183,7 +183,6 @@
 		frametitlebackgroundcolor=Maselli,
 	},
 ]{corollary}
-
 \theoremstyle{kaodefinition}
 \declaretheorem[
 	name=Definition,
@@ -196,7 +195,6 @@
 		frametitlebackgroundcolor=coloredefinizione,
 	},
 ]{definition}
-
 \theoremstyle{kaodefinition}
 \declaretheorem[
 	name=Postulato,
@@ -220,7 +218,6 @@
 		frametitlebackgroundcolor=Azzurro,
 	},
 ]{assumption}
-
 \theoremstyle{kaoremark}
 \declaretheorem[
 	name=Nota,
@@ -233,7 +230,6 @@
 		frametitlebackgroundcolor=Azzurro,
 	},
 ]{nota}
-
 \theoremstyle{kaoexample}
 \declaretheorem[
 	name=Example,
@@ -246,6 +242,31 @@
 		frametitlebackgroundcolor=Goldenrod!45!white,
 	},
 ]{example}
+
+\theoremstyle{kaoexample}
+\declaretheorem[
+	name=Exercise,
+	refname={exercise,exercise},
+	Refname={Exercise,Exercise},
+	numberwithin=section,
+	mdframed={
+		style=mdfkao,
+		backgroundcolor=Goldenrod!45!white,
+		frametitlebackgroundcolor=Goldenrod!45!white,
+	},
+]{exercise}
+
+\theoremstyle{kaoexample}
+\declaretheorem[
+	name=$\star$ Exercise,
+	refname={$\star$ exercise,$\star$ exercise},
+	Refname={$\star$ Exercise,$\star$ Exercise},
+	mdframed={
+		style=mdfkao,
+		backgroundcolor=Goldenrod!45!white,
+		frametitlebackgroundcolor=Goldenrod!45!white,
+	},
+]{starredExercise}
 
 %\renewcommand{\thetheorem}{\arabic{chapter}.\arabic{section}.\arabic{theorem}}
 %\renewcommand{\thetheorem}{\arabic{subsection}.\arabic{theorem}}

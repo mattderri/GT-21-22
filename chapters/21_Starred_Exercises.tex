@@ -1,0 +1,84 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\chapter[Starred Exercises]{Starred Exercises\footnotemark[0]}
+\labch{starex}
+\setcounter{starredExercise}{0}
+These are all the starred exercises proposed during lectures. More starred exercises can be found by consulting the \href{https://elearning.uniroma1.it/pluginfile.php/1149384/mod_resource/content/1/Diario lezioni GTMP 2022 [April 30].pdf}{Lecture calendar}.
+
+\textbf{From \refch{Lie-groups-I}}
+\hline
+\begin{starredExercise}
+Check that, for any Lie group $G$, the \textbf{Lie algebra of the Lie group} is a Lie algebra, i.e. (L1), (L2) and (L3) are satisfied. [See \refdef{Lie-algebra}]
+\end{starredExercise}
+\textbf{From \refch{Lie-groups-II}}
+\hline
+It is possible to do \textbf{only one} between Exercise 2 and Exercise 3, you \underline{\textbf{cannot do both}}.
+\begin{starredExercise}:
+\begin{enumerate}
+    \item Prove that $A\in \textrm{O}(p,q)$ if and only if {\color{red}$A^TGA=G$}\marginnote{If $G=\mathbb{1}$, i.e. the Euclidean case, we recover that $A^TA=\mathbb{1}$.}
+    \item Use 1) to prove that $\textrm{O}(p,q)$ is a \textbf{closed subgroup} of $\textrm{GL}(\mathbb{R}^{p+q})$, hence a \textbf{Lie subgroup} (use Cartan's criterion).
+\end{enumerate}
+\end{starredExercise}
+\begin{starredExercise}:
+\begin{enumerate}
+    \item $A\in \text{S}_\text{P}(n,\mathbb{R})$ if and only if ${\color{red}-\Omega A^T\Omega=A^{-1}}$
+    \item Use 1) to prove that $\text{S}_\text{P}(n,\mathbb{R})$ is a \textbf{Lie subgroup} of $\textrm{GL}(\mathbb{R}^{2n})$
+\end{enumerate}
+\end{starredExercise}
+\textbf{From \refch{Lie-groups-III}}
+\hline
+\begin{starredExercise}
+You can do this exercise after we do the representation theory[\refch{RT}].
+Let $G=\mathbb{R}\times\mathbb{R}\times\text{U}(1)$, $(x,y,u)\in G$. The product is defined as:
+\[
+(x_1,y_1,u_1)\cdot(x_2,y_2,u_2):=(x_1+x_2,y_1+y_2,e^{ix_1y_2}u_1u_2)
+\]
+\begin{enumerate}
+    \item Prove that $G$ is a Lie group [easy].
+    \item Prove that $G$ is \underline{\underline{\textbf{not}}} isomorphic to any subgroup of $\textrm{GL}(N,\mathbb{C})$ for any $N\in\mathbb{N}^\ast$. [Requires \textbf{representation theory}!\footnote{You will do it by contradiction, when we know that representation theory as/are matrix Lie groups ???}].
+\end{enumerate}
+\end{starredExercise}
+\textbf{From \refch{Matrix-Exponential-and-Logarithm}}
+\hline
+\begin{starredExercise}
+From \refthm{logA}: 
+\renewcommand{\labelenumi}{\Alph{enumi})}
+\begin{enumerate}
+    \item The series (\ref{eq:mat-log}) is \textbf{norm convergent}\\ $\forall A\in\text{Mat}(n,\mathbb{K}): {\color{red}\lVert A-\mathbb{1}\rVert<1}$ and the map $A\mapsto\log(A)$ is \textbf{continuous} on $\mathbb{B}_1(\mathbb{1})$
+    \item $\forall\;A\in\mathbb{B}_1(\mathbb{1})$ one has 
+    \[
+    e^{\log(A)}=A
+    \]
+    \item $\forall\;X\in\text{Mat}(n,\mathbb{K})$ with ${\color{red}\lVert X\rVert<\log(2)}$ then $\lVert e^X-\mathbb{1}\rVert<1$ and 
+    \[
+    \log(e^X)=X
+    \]
+\end{enumerate}
+We covered in the chapter (A) and (C) and we saw how (B) is splitted into two cases: $A$ is diagonalizable (B1), $A$ is non-diagonalizable (B2). We proved the case (B1), for (B2) we said that each $A\in\text{Mat}(n,\mathbb{C})$ can be approximated by a sequence $\{A_m\}_{m\in\mathbb{N}}$ of \textbf{diagonalizable matrices} so that $A_m$ converges in norm:
+\[
+A_m\xrightarrow[m\to\infty]{\lVert\dots\rVert}A
+\]
+Prove the previous claim and complete the proof of (B).
+\end{starredExercise}
+\textbf{From \refch{Lie-Algebra}}
+\hline
+\begin{starredExercise}[Variation on the theme by Pauli] Notice that our space $V$ is just the Lie algebra of physicists, with our notation: $V=i\mathfrak{su}(2)$. Hence, a canonical basis %\marginnote[-2mm]{The plural of \textit{base} is \textit{\href{https://en.wiktionary.org/wiki/base}{bases}}}
+in $V$ is constructed via \textbf{Pauli matrices}\index{Pauli matrices}:\marginnote[2mm]{When a matrix is like $\sigma_1$ and $\sigma_2$ it is said to be \textit{\href{https://en.wikipedia.org/wiki/Main_diagonal}{off diagonal}} (English) \textit{\href{https://it.wikipedia.org/wiki/Diagonale_principale}{anti-diagonale}} (Italian)}
+\[
+\sigma_1=\mqty(\admat[0]{1,1}) \quad \sigma_2=\mqty(\admat[0]{-i,i}) \quad \sigma_3=\mqty(\dmat[0]{1,-1})
+\]
+Check that $\Tilde{E}_j=\frac{i}{2}\sigma_j$ for $j\in\Bqty{1,2,3}$ is a basis for $\mathfrak{su}(2)$. Now we can parameterize $X\in V$ in a natural way, as
+\[
+X=\sum_{j=1}^3 x_j\sigma_i=\mqty(x_3 & x_1-ix_2 \\ x_1+ix_2 & -x_3)
+\]
+Then everything goes the same way as before (by conjugation we get a Lie group homomorphism).
+\end{starredExercise}
+\begin{figure}[h]
+    \centering
+    \includegraphics{images/semplicementepanati.png}
+    \caption*{}
+    \label{fig:my_label}
+\end{figure}
+\end{document}
